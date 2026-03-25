@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infraestructura Web | Conceptos Clave</title>
+    <link rel="stylesheet" href="styleone.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Tipos de servidores</div>
+        <ul class="nav-links">
+            <li><a href="#servidores">Servidores</a></li>
+            <li><a href="#hardware">Hardware</a></li>
+            <li><a href="#software">Software</a></li>
+            <li><a href="#workflow">Forma de Trabajo</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Servidores y Arquitectura</h1>
+        <p>Explorando los cimientos del ecosistema digital moderno.</p>
+    </header>
+
+    <main>
+        <section id="servidores" class="section-block">
+            <h2>Tipos de Servidores Web</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Apache / Nginx</h3>
+                    <p>Los estándares de la industria para servir contenido estático y dinámico con alta estabilidad.</p>
+                </div>
+                <div class="card">
+                    <h3>Servidores Locales</h3>
+                    <p>Entornos de desarrollo controlados (como XAMPP o contenedores Docker) para pruebas antes del despliegue.</p>
+                </div>
+                <div class="card">
+                    <h3>Cloud Servers</h3>
+                    <p>Instancias virtuales escalables que permiten ajustar recursos según la demanda en tiempo real.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="hardware" class="section-block bg-alt">
+            <h2>Hardware</h2>
+            <p>La potencia física detrás del código. Se compone de componentes críticos diseñados para el funcionamiento 24/7:</p>
+            <ul>
+                <li><strong>Procesadores (CPU):</strong> Unidades de múltiples núcleos optimizadas para procesos paralelos.</li>
+                <li><strong>Memoria RAM:</strong> Alta velocidad para gestionar peticiones simultáneas de usuarios.</li>
+                <li><strong>Almacenamiento (SSD/NVMe):</strong> Prioridad en la velocidad de lectura y escritura para reducir la latencia.</li>
+            </ul>
+        </section>
+
+        <section id="software" class="section-block">
+            <h2>Software de Servidor</h2>
+            <div class="content-flex">
+                <div class="text">
+                    <p>El sistema operativo (comúnmente distribuciones de <strong>Linux</strong> como Ubuntu o CentOS) actúa como la base, sobre la cual se ejecutan bases de datos (MySQL, PostgreSQL) y lenguajes de backend.</p>
+                </div>
+                <div class="badge">Stack Tecnológico</div>
+            </div>
+        </section>
+
+        <section id="workflow" class="section-block bg-dark">
+            <h2 class="text-white">Forma de Trabajo</h2>
+            <div class="steps">
+                <div class="step">1. Petición (Request) del cliente vía HTTP.</div>
+                <div class="step">2. Procesamiento del servidor y consulta a base de datos.</div>
+                <div class="step">3. Respuesta (Response) enviando los archivos al navegador.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Ingeniería en Comunicación Multimedia</p>
+    </footer>
+
+</body>
+</html>

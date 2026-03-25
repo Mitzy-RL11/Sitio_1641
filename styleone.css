@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Variables de Estilo Brutalista */
+:root {
+    --bg-color: #f0f0f0;
+    --accent: #99D6EA; /* Verde Matrix/Terminal #99D6EA */ 
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --border-size: 3px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Toque técnico */
+    background-color: var(--bg-color);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--white);
+    border-bottom: var(--border-size) solid var(--black);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+}
+
+.nav-links li a:hover {
+    background: var(--accent);
+    border: 2px solid var(--black);
+}
+
+/* Hero */
+.hero {
+    padding: 100px 5%;
+    background: var(--accent);
+    border-bottom: var(--border-size) solid var(--black);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 4px 4px 0px var(--white);
+}
+
+/* Secciones Generales */
+.section-block {
+    padding: 80px 10%;
+    border-bottom: var(--border-size) solid var(--black);
+}
+
+.bg-alt { background-color: #e0e0e0; }
+.bg-dark { background-color: var(--black); color: var(--white); }
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    display: inline-block;
+    border-bottom: 5px solid var(--accent);
+}
+
+/* Grid y Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 20px;
+    border: var(--border-size) solid var(--black);
+    box-shadow: 8px 8px 0px var(--black);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px var(--black);
+}
+
+/* Forma de Trabajo - Pasos */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.step {
+    background: #333;
+    padding: 20px;
+    border-left: 10px solid var(--accent);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: var(--white);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 2rem; }
+}
