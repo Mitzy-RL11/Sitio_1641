@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering Web Architecture | Dominios y Subdominios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fondo Animado (Circulos) -->
+    <div class="area-fondo">
+        <ul class="circulos">
+            <li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+
+    <!-- Contenedor Principal -->
+    <main class="main-container">
+        
+        <header class="main-header">
+            <div class="logo-area">
+                <span class="icon-server">{ DNS_ROOT }</span>
+                <h1>Arquitectura de Dominios</h1>
+            </div>
+            <p class="subtitle">Ingeniería, Jerarquía y Gestión de Identidad Digital</p>
+        </header>
+
+        <!-- Introducción Técnica -->
+        <section class="welcome-card">
+            <h2>El FQDN (Fully Qualified Domain Name)</h2>
+            <p>
+                Un nombre de dominio es la traducción semántica de una dirección IP. En la ingeniería web, entender su jerarquía es vital: desde el <strong>Punto Raíz</strong> (implícito al final de cada URL), pasando por el <strong>TLD</strong>, hasta llegar a los <strong>Hostnames</strong> específicos. Esta estructura permite la escalabilidad global del sistema DNS.
+            </p>
+        </section>
+
+        <div class="topics-grid">
+            
+            <!-- 1. Anatomía y FQDN -->
+            <article class="topic-btn dynamic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">🧩</span>
+                    <div class="btn-text">
+                        <h3>Anatomía del FQDN</h3>
+                        <p><strong>Estructura:</strong> Subdominio + Dominio (SLD) + Extensión (TLD). Se lee de derecha a izquierda en la jerarquía del servidor raíz.</p>
+                        <button class="real-btn">Jerarquía Técnica</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2. Clasificación de TLDs -->
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">🌍</span>
+                    <div class="btn-text">
+                        <h3>Tipología de Extensiones</h3>
+                        <p><strong>gTLD:</strong> Genéricos (.com, .net).<br><strong>ccTLD:</strong> Territoriales (.mx, .es).<br><strong>sTLD:</strong> Patrocinados (.edu, .gov).</p>
+                        <button class="real-btn">Ver Categorías</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3. Estrategia de Subdominios -->
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">🌳</span>
+                    <div class="btn-text">
+                        <h3>Subdominios vs Subcarpetas</h3>
+                        <p>Los subdominios actúan como entidades independientes (útil para apps o blogs), mientras que las carpetas heredan la autoridad SEO.</p>
+                        <button class="real-btn">Comparativa</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4. Gestión de Registros DNS -->
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">⚡</span>
+                    <div class="btn-text">
+                        <h3>Registros DNS Clave</h3>
+                        <p><strong>A:</strong> IPv4.<br><strong>AAAA:</strong> IPv6.<br><strong>MX:</strong> Correo.<br><strong>CNAME:</strong> Alias de servidor.<br><strong>TXT:</strong> Verificación y seguridad.</p>
+                        <button class="real-btn">Configuración</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 5. Ciclo de Vida del Dominio -->
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">⏳</span>
+                    <div class="btn-text">
+                        <h3>Estatus de Propiedad</h3>
+                        <p>Desde el registro activo hasta el Periodo de Gracia, Redención y finalmente la liberación (Pending Delete) al mercado público.</p>
+                        <button class="real-btn">Línea de Tiempo</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 6. Seguridad y SSL Wildcard -->
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">🛡️</span>
+                    <div class="btn-text">
+                        <h3>Seguridad en la Capa 7</h3>
+                        <p>Implementación de certificados <strong>Wildcard (*)</strong> para proteger todos los subdominios y políticas HSTS para forzar HTTPS.</p>
+                        <button class="real-btn">Protocolos</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Sección de Detalles Adicionales (Opcional para expandir) -->
+        <section class="welcome-card" style="margin-top: 40px; border-left: 4px solid var(--secondary);">
+            <h3>Resumen Estratégico</h3>
+            <p>
+                Para proyectos multimedia, la elección de un dominio impacta directamente en la latencia (vía DNS), el prestigio de marca y la facilidad de mantenimiento de servicios distribuidos en diferentes subdominios.
+            </p>
+        </section>
+
+        <footer class="main-footer">
+            <p>Diseñado para el programa de Ingeniería en Comunicación Multimedia</p>
+            <p>&copy; 2026 MediaCode | Infraestructura Web</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
