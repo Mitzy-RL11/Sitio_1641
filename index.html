@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto profesor Norberto</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Loyo Rios</div>
+        <div class="nav-menu">
+            <button class="btn-register" id="openRegister">Registrarse</button>
+            <div class="dropdown-form" id="registerForm">
+                <h3>Registro</h3>
+                <form action="registro.php" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="correo" placeholder="Correo" required>
+                    <textarea name="comentario" placeholder="Comentario" rows="3"></textarea>
+                    <button type="submit" class="btn-send">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <h1 class="main-title">Proyecto profesor Norberto</h1>
+        <div class="button-container">
+            <button class="main-btn btn-gemini" href="ADMIN.html">Administración de Servidores</button>
+            <button class="main-btn btn-algo">Algoritmos de Compresión</button>
+        </div>
+    </main>
+
+    <script>
+        // Lógica para desplegar el menú de registro [cite: 17]
+        const btnRegister = document.getElementById('openRegister');
+        const form = document.getElementById('registerForm');
+
+        btnRegister.addEventListener('click', (e) => {
+            e.stopPropagation();
+            form.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!form.contains(e.target) && e.target !== btnRegister) {
+                form.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
