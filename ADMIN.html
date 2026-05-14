@@ -8,108 +8,149 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Consistencia para el menú desplegable en todas las páginas */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .dropdown-form {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--sombra);
+            width: 300px;
+        }
+
+        .dropdown-form.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dropdown-form input, .dropdown-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">Norberto_Proyecto</div>
-        <div class="nav-menu">
-            <button class="btn-register" id="regBtn">Registrarse</button>
-            <div class="dropdown-form" id="regForm">
-                <h3>Registro de Usuario</h3>
-                <form action="registro.php" method="POST">
-                    <input type="text" name="nombre" placeholder="Nombre completo" required>
-                    <input type="email" name="correo" placeholder="Correo electrónico" required>
-                    <textarea name="comentario" placeholder="Comentario" rows="3"></textarea>
-                    <button type="submit" class="btn-send">Enviar Registro</button>
-                </form>
+    <main class="main-container">
+        <!-- Barra de Navegación Unificada -->
+        <nav class="navbar">
+            <div class="logo" style="font-weight: 600; color: var(--bugambilia);">Loyo Rios</div>
+            <div class="nav-menu">
+                <button class="main-btn btn-gemini" id="regBtn">Registrarse</button>
+                <div class="dropdown-form" id="regForm">
+                    <h3 style="margin-bottom: 15px;">Registro de Usuario</h3>
+                    <form action="registro.php" method="POST">
+                        <input type="text" name="nombre" placeholder="Nombre completo" required>
+                        <input type="email" name="correo" placeholder="Correo electrónico" required>
+                        <textarea name="comentario" placeholder="Comentario" rows="3"></textarea>
+                        <button type="submit" class="main-btn btn-gemini" style="width: 100%; justify-content: center;">Enviar Registro</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <div class="main-container">
-        <header class="main-header">
-            <div class="logo-area">
-                <span class="icon-server">⚙️</span> 
-                <h1 class="main-title">Administración de Servidores</h1>
-            </div>
+        <header class="main-header" style="margin-top: 30px;">
+            <h1 class="main-title">Administración de Servidores</h1>
             <p class="subtitle">Ecosistema de Infraestructura Digital</p>
         </header>
 
-        <main class="hub-content">
-            <section class="welcome-card">
-                <h2>Panel de Control de Temas</h2>
-                <p>Bienvenido al módulo central de aprendizaje. Accede a los pilares fundamentales de la arquitectura de servidores.</p>
-            </section>
+        <section class="welcome-card">
+            <h2>Panel de Control de Temas</h2>
+            <p>Bienvenido al módulo central de aprendizaje. Accede a los pilares fundamentales de la arquitectura de servidores.</p>
+        </section>
 
-            <nav class="topics-grid">
-                <div class="topic-btn">
-                    <div class="btn-content">
-                        <span class="btn-icon">💾</span>
-                        <div class="btn-text">
-                            <h3>Tipos de servidores</h3>
-                            <p>Web, Hardware, Software y formas de trabajo.</p>
-                            <button onclick="location.href='Tipos de servidores.html'" class="main-btn btn-gemini">Explorar</button>
-                        </div>
+        <!-- Cuadrícula de Temas -->
+        <div class="topics-grid">
+            <div class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon" style="font-size: 2rem;">💾</span>
+                    <div class="btn-text">
+                        <h3>Tipos de servidores</h3>
+                        <p>Web, Hardware, Software y flujo de trabajo.</p>
+                        <button onclick="location.href='Tipos de servidores.html'" class="main-btn btn-gemini" style="margin-top: 10px;">Explorar</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="topic-btn">
-                    <div class="btn-content">
-                        <span class="btn-icon">🌐</span>
-                        <div class="btn-text">
-                            <h3>Hosting Web</h3>
-                            <p>Estructura física y alojamiento para la existencia de tu sitio.</p>
-                            <button onclick="location.href='Hosting_Web.html'" class="main-btn btn-gemini">Explorar</button>
-                        </div>
+            <div class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon" style="font-size: 2rem;">🌐</span>
+                    <div class="btn-text">
+                        <h3>Hosting Web</h3>
+                        <p>Alojamiento y estructura física para tu sitio web.</p>
+                        <button onclick="location.href='Hosting_Web.html'" class="main-btn btn-gemini" style="margin-top: 10px;">Explorar</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="topic-btn">
-                    <div class="btn-content">
-                        <span class="btn-icon">📁</span>
-                        <div class="btn-text">
-                            <h3>FileZilla</h3>
-                            <p>Software de código abierto para transferencia FTP y SFTP.</p>
-                            <button onclick="location.href='file_zilla.html'" class="main-btn btn-gemini">Explorar</button>
-                        </div>
+            <div class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon" style="font-size: 2rem;">📁</span>
+                    <div class="btn-text">
+                        <h3>FileZilla</h3>
+                        <p>Transferencia profesional de archivos vía FTP/SFTP.</p>
+                        <button onclick="location.href='file_zilla.html'" class="main-btn btn-gemini" style="margin-top: 10px;">Explorar</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="topic-btn">
-                    <div class="btn-content">
-                        <span class="btn-icon">🔗</span>
-                        <div class="btn-text">
-                            <h3>Dominios y Subdominios</h3>
-                            <p>Jerarquía, registros DNS y certificados SSL de seguridad.</p>
-                            <button onclick="location.href='Dominios_y_Subdominios.html'" class="main-btn btn-gemini">Explorar</button>
-                        </div>
+            <div class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon" style="font-size: 2rem;">🔗</span>
+                    <div class="btn-text">
+                        <h3>Dominios y Subdominios</h3>
+                        <p>DNS, jerarquías y seguridad con certificados SSL.</p>
+                        <button onclick="location.href='Dominios_y_Subdominios.html'" class="main-btn btn-gemini" style="margin-top: 10px;">Explorar</button>
                     </div>
                 </div>
-                <!-- Botón de Navegación de Regreso -->
-        <div style="margin-top: 30px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 20px;">
+            </div>
+        </div>
+
+        <!-- Botón de Navegación de Regreso -->
+        <div style="margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 30px; text-align: center;">
             <a href="index.html" class="main-btn btn-back">
                 <span>←</span> Volver al Menú Principal
             </a>
         </div>
-            </nav>
-        </main>
 
         <footer class="main-footer">
             <p>&copy; 2026 Rodríguez Loyo Mitzy Angela & Rios Santiago Abraham</p>
+            <p style="font-size: 0.8rem; margin-top: 5px;">Ingeniería en Comunicación Multimedia</p>
         </footer>
-    </div>
+    </main>
 
     <script>
-        // Lógica para desplegar el formulario
         const regBtn = document.getElementById('regBtn');
         const regForm = document.getElementById('regForm');
 
-        regBtn.addEventListener('click', () => {
+        regBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             regForm.classList.toggle('active');
         });
 
-        // Cerrar al hacer clic fuera
         window.addEventListener('click', (e) => {
             if (!regBtn.contains(e.target) && !regForm.contains(e.target)) {
                 regForm.classList.remove('active');
