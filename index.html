@@ -3,38 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto profesor Norberto</title>
+    <title>Mastering Web Architecture | Proyecto Norberto</title>
+    <!-- Fuentes oficiales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Vinculación al CSS actualizado -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para que el menú de registro no rompa el diseño */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .dropdown-form {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--sombra);
+            width: 300px;
+        }
+
+        .dropdown-form.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dropdown-form input, .dropdown-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">Loyo Rios</div>
-        <div class="nav-menu">
-            <button class="btn-register" id="openRegister">Registrarse</button>
-            <div class="dropdown-form" id="registerForm">
-                <h3>Registro</h3>
-                <form action="registro.php" method="POST">
-                    <input type="text" name="nombre" placeholder="Nombre" required>
-                    <input type="email" name="correo" placeholder="Correo" required>
-                    <textarea name="comentario" placeholder="Comentario" rows="3"></textarea>
-                    <button type="submit" class="btn-send">Enviar</button>
-                </form>
+    <main class="main-container">
+        
+        <!-- Barra de navegación superior integrada -->
+        <nav class="navbar">
+            <div class="logo" style="font-weight: 600; color: var(--bugambilia);">Loyo Rios</div>
+            <div class="nav-menu">
+                <button class="main-btn btn-gemini" id="openRegister">Registrarse</button>
+                
+                <div class="dropdown-form" id="registerForm">
+                    <h3 style="margin-bottom: 15px; font-size: 1.2rem;">Formulario de Registro</h3>
+                    <form action="registro.php" method="POST">
+                        <input type="text" name="nombre" placeholder="Nombre completo" required>
+                        <input type="email" name="correo" placeholder="Correo electrónico" required>
+                        <textarea name="comentario" placeholder="¿Tienes algún comentario?" rows="3"></textarea>
+                        <button type="submit" class="main-btn btn-gemini" style="width: 100%; justify-content: center;">Enviar Registro</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <main class="hero">
-        <h1 class="main-title">Proyecto profesor Norberto</h1>
-        <div class="button-container">
-            <button class="main-btn btn-gemini" onclick="window.location.href='ADMIN.html'"> Administración de Servidores </button>
-            <button class="main-btn btn-algo">Algoritmos de Compresión</button>
-        </div>
+        <!-- Sección Hero corregida -->
+        <header class="welcome-card" style="text-align: center; margin-top: 50px; padding: 60px 40px;">
+            <h1 class="main-title">Proyecto Profesor Norberto</h1>
+            <p class="subtitle" style="color: #666; margin-bottom: 30px;">Ingeniería en Comunicación Multimedia</p>
+            
+            <div class="topics-grid" style="margin-top: 20px;">
+                <!-- Acceso a Administración -->
+                <a href="ADMIN.html" class="topic-btn">
+                    <span style="font-size: 2rem;">🖥️</span>
+                    <h3>Administración de Servidores</h3>
+                    <p>Configuración, hosting y protocolos de transferencia.</p>
+                </a>
+
+                <!-- Acceso a Algoritmos (Puedes cambiar el enlace después) -->
+                <a href="#" class="topic-btn">
+                    <span style="font-size: 2rem;">🧮</span>
+                    <h3>Algoritmos de Compresión</h3>
+                    <p>Optimización de datos y eficiencia en el ecosistema digital.</p>
+                </a>
+            </div>
+        </header>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 Norberto_Proyecto | MediaCode</p>
+            <p style="font-size: 0.8rem; margin-top: 5px;">Desarrollado por Loyo Rios</p>
+        </footer>
+
     </main>
 
     <script>
-        // Lógica para desplegar el menú de registro [cite: 17]
+        // Lógica para desplegar el menú de registro
         const btnRegister = document.getElementById('openRegister');
         const form = document.getElementById('registerForm');
 
@@ -43,6 +116,7 @@
             form.classList.toggle('active');
         });
 
+        // Cerrar al hacer clic fuera
         document.addEventListener('click', (e) => {
             if (!form.contains(e.target) && e.target !== btnRegister) {
                 form.classList.remove('active');
