@@ -8,14 +8,74 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Consistencia para el menú desplegable flotante */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .dropdown-form {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--sombra);
+            width: 300px;
+        }
+
+        .dropdown-form.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dropdown-form input, .dropdown-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
 
-    <main class="main-container" style="padding-top: 40px;">
+    <main class="main-container">
         
-        <header class="main-header">
+        <!-- Barra de Navegación Unificada -->
+        <nav class="navbar">
+            <div class="logo" style="font-weight: 600; color: var(--bugambilia);">Loyo Rios</div>
+            <div class="nav-menu">
+                <button class="main-btn btn-gemini" id="regBtn">Registrarse</button>
+                <div class="dropdown-form" id="regForm">
+                    <h3 style="margin-bottom: 15px;">Registro de Usuario</h3>
+                    <form action="registro.php" method="POST">
+                        <input type="text" name="nombre" placeholder="Nombre completo" required>
+                        <input type="email" name="correo" placeholder="Correo electrónico" required>
+                        <textarea name="comentario" placeholder="Comentario" rows="3"></textarea>
+                        <button type="submit" class="main-btn btn-gemini" style="width: 100%; justify-content: center;">Enviar Registro</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <header class="main-header" style="margin-top: 30px;">
             <div class="logo-area">
-                <span class="icon-server">🗄️</span>
+                <span class="icon-server" style="font-size: 2.5rem;">🗄️</span>
                 <h1 class="main-title">Tipos de Servidores y Arquitectura</h1>
             </div>
             <p class="subtitle">Explorando los cimientos físicos y lógicos del ecosistema digital.</p>
@@ -31,7 +91,7 @@
         <div class="topics-grid">
             <article class="topic-btn">
                 <div class="btn-content">
-                    <span class="btn-icon">🌐</span>
+                    <span class="btn-icon" style="font-size: 2rem;">🌐</span>
                     <div class="btn-text">
                         <h3>Apache / Nginx</h3>
                         <p>Estándares de la industria para servir contenido estático y dinámico con alta estabilidad.</p>
@@ -41,7 +101,7 @@
 
             <article class="topic-btn">
                 <div class="btn-content">
-                    <span class="btn-icon">💻</span>
+                    <span class="btn-icon" style="font-size: 2rem;">💻</span>
                     <div class="btn-text">
                         <h3>Servidores Locales</h3>
                         <p>Entornos controlados (XAMPP / Docker) para realizar pruebas críticas antes del despliegue.</p>
@@ -51,7 +111,7 @@
 
             <article class="topic-btn">
                 <div class="btn-content">
-                    <span class="btn-icon">☁️</span>
+                    <span class="btn-icon" style="font-size: 2rem;">☁️</span>
                     <div class="btn-text">
                         <h3>Cloud Servers</h3>
                         <p>Instancias virtuales escalables que permiten ajustar recursos según la demanda en tiempo real.</p>
@@ -61,7 +121,6 @@
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
-            
             <section class="welcome-card" style="margin: 0; border-top: 5px solid var(--amarillo);">
                 <h3>Componentes de Hardware</h3>
                 <ul style="list-style: none; padding: 0; margin-top: 15px;">
@@ -95,12 +154,34 @@
             </div>
         </section>
 
+        <!-- Botón de regreso a la sección ADMIN -->
+        <div style="margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 30px; text-align: center;">
+            <a href="ADMIN.html" class="main-btn btn-back">
+                <span>←</span> Volver a Administración
+            </a>
+        </div>
+
         <footer class="main-footer" style="margin-top: 60px;">
             <p>Ingeniería en Comunicación Multimedia | Infraestructura Web</p>
-            <p>&copy; 2026 Norberto_Proyecto | MediaCode</p>
+            <p>&copy; 2026 MediaCode | Loyo Rios</p>
         </footer>
 
     </main>
 
+    <script>
+        const regBtn = document.getElementById('regBtn');
+        const regForm = document.getElementById('regForm');
+
+        regBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            regForm.classList.toggle('active');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (!regBtn.contains(e.target) && !regForm.contains(e.target)) {
+                regForm.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
