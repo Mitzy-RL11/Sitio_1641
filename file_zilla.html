@@ -3,162 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FileZilla | Guía de Transferencia de Archivos</title>
+    <title>Mastering Web Architecture | FileZilla FTP</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style_hub.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilos específicos para esta sección para complementar style_hub.css */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .feature-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .feature-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px;
-            border-radius: 10px;
-            border-left: 3px solid var(--secondary);
+        /* Optimizaciones específicas para esta página */
+        .feature-tag {
+            background: rgba(224, 30, 90, 0.1); /* Bugambilia suave */
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 4px solid var(--bugambilia);
             font-size: 0.9rem;
             transition: 0.3s;
         }
-
-        .feature-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateX(5px);
+        .feature-tag:hover {
+            background: rgba(224, 30, 90, 0.2);
+            transform: translateY(-3px);
         }
-
-        .step-box {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border: 1px dashed var(--glass-border);
-        }
-
-        .step-number {
-            background: var(--primary);
-            color: white;
-            width: 30px;
-            height: 30px;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            margin-right: 10px;
+        .step-indicator {
+            background: var(--amarillo);
+            color: var(--oscuro);
             font-weight: bold;
-        }
-
-        .download-zone {
-            text-align: center;
-            padding: 40px;
-            background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(0, 206, 201, 0.1));
+            padding: 5px 12px;
             border-radius: 20px;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 900px) {
-            .content-grid { grid-template-columns: 1fr; }
-        }
-        .h1{
-            color: white;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
 
-    <div class="area-fondo">
-        <ul class="circulos">
-            <li></li><li></li><li></li><li></li><li></li>
-        </ul>
-    </div>
-
-    <div class="main-container">
+    <main class="main-container" style="padding-top: 40px;">
+        
         <header class="main-header">
             <div class="logo-area">
-                <span class="icon-server">📁</span> 
-                <h1>FileZilla</h1>
+                <span class="icon-server">📂</span>
+                <h1 class="main-title">FileZilla: Gestión FTP</h1>
             </div>
-            <p class="subtitle">Protocolo de Transferencia de Archivos Profesional</p>
+            <p class="subtitle">Protocolo de Transferencia de Archivos Profesional para Desarrolladores.</p>
         </header>
 
-        <main class="hub-content">
-            <section class="welcome-card">
-                <h2>¿Qué es FileZilla?</h2>
-                <p>Es un software de código abierto diseñado para la transferencia de archivos a través del protocolo <strong>FTP</strong>, <strong>FTPS</strong> y <strong>SFTP</strong>. Es una herramienta esencial para desarrolladores y administradores de sistemas debido a su eficiencia y su intuitiva interfaz gráfica.</p>
-            </section>
+        <section class="welcome-card">
+            <h2>¿Qué es FileZilla?</h2>
+            <p>
+                Es un software de código abierto diseñado para la transferencia de archivos a través de los protocolos <strong>FTP, FTPS y SFTP</strong>. Es la herramienta estándar para subir archivos de tu computadora local al servidor de hosting de forma segura y eficiente.
+            </p>
+        </section>
 
+        <h2 style="text-align: center; margin: 40px 0 20px; font-family: 'Montserrat';">Funcionalidades Clave</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 40px;">
+            <div class="feature-tag">Soporta FTP, FTPS y SFTP</div>
+            <div class="feature-tag">Multiplataforma (Win/Linux/Mac)</div>
+            <div class="feature-tag">Gestor de sitios y colas</div>
+            <div class="feature-tag">Edición remota directa</div>
+            <div class="feature-tag">Navegación sincronizada</div>
+            <div class="feature-tag">Búsqueda remota de archivos</div>
+        </div>
+
+        <div class="topics-grid">
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">💻</span>
+                    <div class="btn-text">
+                        <h3>FileZilla Client</h3>
+                        <p>La herramienta que usas para conectarte a un servidor y subir tus páginas web.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">⚙️</span>
+                    <div class="btn-text">
+                        <h3>FileZilla Server</h3>
+                        <p>Permite convertir tu máquina en un servidor para que otros descarguen tus archivos.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <section class="welcome-card" style="margin-top: 40px; border-left: 5px solid var(--amarillo);">
+            <h2 style="margin-bottom: 20px;">Guía Rápida de Instalación</h2>
             
-
-            <section class="info-section">
-                <h2 style="color: var(--secondary); margin-bottom: 20px;">Características Principales</h2>
-                <div class="feature-list">
-                    <div class="feature-item">Soporta FTP, FTPS y SFTP</div>
-                    <div class="feature-item">Multiplataforma (Win, Linux, Mac)</div>
-                    <div class="feature-item">Gestor de sitios y colas</div>
-                    <div class="feature-item">Soporte de arrastrar y soltar</div>
-                    <div class="feature-item">Edición remota de archivos</div>
-                    <div class="feature-item">Límites de velocidad ajustables</div>
-                    <div class="feature-item">Navegación sincronizada</div>
-                    <div class="feature-item">Búsqueda remota de archivos</div>
-                </div>
-            </section>
-
-            <div class="content-grid">
-                <section class="step-box">
-                    <h3>FileZilla Server</h3>
-                    <p>A diferencia del cliente, la versión <strong>Server</strong> permite convertir tu propia máquina en un servidor FTP. Es ideal para gestionar y compartir archivos en redes internas, permitiendo crear cuentas de usuario y establecer permisos específicos.</p>
-                </section>
-
-                <section class="step-box">
-                    <h3>¿Por qué elegirlo?</h3>
-                    <p>Principalmente por su <strong>facilidad de uso</strong>. El Gestor de Sitios permite organizar múltiples servidores, facilitando el acceso rápido a infraestructuras que ya hemos configurado previamente.</p>
-                </section>
+            <div style="margin-bottom: 20px;">
+                <p><span class="step-indicator">1</span> <strong>Descarga:</strong> Obtén el instalador desde el sitio oficial filezilla-project.org.</p>
             </div>
-
-            <section class="installation-guide">
-                <h2 style="color: var(--secondary); margin-top: 30px; margin-bottom: 20px;">Guía de Instalación</h2>
-                
-                <div class="step-box">
-                    <p><span class="step-number">1</span><strong>Descarga:</strong> Obtén el instalador desde el sitio oficial. (Requiere permisos de administrador en Windows).</p>
-                </div>
-
-                <div class="step-box">
-                    <p><span class="step-number">2</span><strong>Licencia:</strong> Acepta los términos de uso para proceder con la instalación.</p>
-                </div>
-
-                <div class="step-box">
-                    <p><span class="step-number">3</span><strong>Configuración:</strong> Elige si la aplicación será para todos los usuarios o solo para ti. Se recomienda instalar todos los componentes por defecto.</p>
-                </div>
-            </section>
-
-            <div class="download-zone">
-                <h3>¿Listo para empezar?</h3>
-                <p>Descarga la última versión estable desde el repositorio oficial.</p>
-                <button onclick="window.open('https://filezilla-project.org/', '_blank')" class="real-btn" style="margin-top: 20px;">
-                    Ir a la Web Oficial de FileZilla
-                </button>
+            
+            <div style="margin-bottom: 20px;">
+                <p><span class="step-indicator">2</span> <strong>Licencia:</strong> Acepta los términos de uso y selecciona los componentes por defecto.</p>
             </div>
-        </main>
+            
+            <div style="margin-bottom: 20px;">
+                <p><span class="step-indicator">3</span> <strong>Configuración:</strong> Define si el acceso será global para todos los usuarios del sistema.</p>
+            </div>
+        </section>
 
-        <footer class="main-footer">
-            <button onclick="location.href='index.html'" class="real-btn" style="border-color: var(--primary); color: var(--primary); margin-bottom: 20px;">
-                Volver al Hub Central
-            </button>
+        <div style="text-align: center; margin-top: 50px; padding: 40px; background: #f9f9f9; border-radius: 20px;">
+            <h3>¿Listo para transferir archivos?</h3>
+            <p style="margin-bottom: 20px;">Accede al repositorio oficial para descargar la última versión estable.</p>
+            <a href="https://filezilla-project.org/" target="_blank" class="main-btn btn-gemini" style="text-decoration: none; display: inline-block;">
+                Ir a la Web Oficial
+            </a>
+        </div>
+
+        <footer class="main-footer" style="margin-top: 60px;">
+            <p>Ingeniería en Comunicación Multimedia | Infraestructura Web</p>
             <p>&copy; 2026 Rodríguez Loyo Mitzy Angela & Rios Santiago Abraham</p>
         </footer>
-    </div>
+
+    </main>
 
 </body>
 </html>
