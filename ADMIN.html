@@ -6,22 +6,32 @@
     <title>Administración de Servidores | Hub Central</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style_hub.css">
 </head>
 <body>
 
-    <div class="area-fondo">
-        <ul class="circulos">
-            <li></li><li></li><li></li><li></li><li></li>
-        </ul>
-    </div>
+    <nav class="navbar">
+        <div class="logo">Norberto_Proyecto</div>
+        <div class="nav-menu">
+            <button class="btn-register" id="regBtn">Registrarse</button>
+            <div class="dropdown-form" id="regForm">
+                <h3>Registro de Usuario</h3>
+                <form action="registro.php" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre completo" required>
+                    <input type="email" name="correo" placeholder="Correo electrónico" required>
+                    <textarea name="comentario" placeholder="Comentario" rows="3"></textarea>
+                    <button type="submit" class="btn-send">Enviar Registro</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 
     <div class="main-container">
         <header class="main-header">
             <div class="logo-area">
-                <span class="icon-server">Administración de Servidores</span> 
-                <h1>Administración de Servidores</h1>
+                <span class="icon-server">⚙️</span> 
+                <h1 class="main-title">Administración de Servidores</h1>
             </div>
             <p class="subtitle">Ecosistema de Infraestructura Digital</p>
         </header>
@@ -29,64 +39,53 @@
         <main class="hub-content">
             <section class="welcome-card">
                 <h2>Panel de Control de Temas</h2>
-                <p>Bienvenido al módulo central de aprendizaje. Desde aquí puedes acceder a los pilares fundamentales de la gestión y arquitectura de servidores modernos.</p>
+                <p>Bienvenido al módulo central de aprendizaje. Accede a los pilares fundamentales de la arquitectura de servidores.</p>
             </section>
 
             <nav class="topics-grid">
-                
                 <div class="topic-btn">
-    <div class="btn-content">
-        <span class="btn-icon">💾</span>
-        <div class="btn-text">
-            <h3>Tipos de servidores</h3>
-            <p> Tipos de servidores Web, Hardware, Software, Forma de trabajo.</p>
-            <button onclick="location.href='Tipos de servidores.html'" class="real-btn">
-                Click aquí para ir a la página
-            </button>
-        </div>
-    </div>
-</div>
+                    <div class="btn-content">
+                        <span class="btn-icon">💾</span>
+                        <div class="btn-text">
+                            <h3>Tipos de servidores</h3>
+                            <p>Web, Hardware, Software y formas de trabajo.</p>
+                            <button onclick="location.href='Tipos de servidores.html'" class="main-btn btn-gemini">Explorar</button>
+                        </div>
+                    </div>
+                </div>
 
-                 <div class="topic-btn">
-    <div class="btn-content">
-        <span class="btn-icon">💾</span>
-        <div class="btn-text">
-            <h3>Hosting Web</h3>
-            <p>FileZilla es un software de código abierto diseñado para la transferencia de archivos a través del protocolo FTP (File Transfer Protocol) y otros protocolos como FTPS y SFTP. </p>
-            <button onclick="location.href='Hosting_Web.html'" class="real-btn">
-                Click aquí para ir a la página
-            </button>
-        </div>
-    </div>
-</div>
+                <div class="topic-btn">
+                    <div class="btn-content">
+                        <span class="btn-icon">🌐</span>
+                        <div class="btn-text">
+                            <h3>Hosting Web</h3>
+                            <p>Estructura física y alojamiento para la existencia de tu sitio.</p>
+                            <button onclick="location.href='Hosting_Web.html'" class="main-btn btn-gemini">Explorar</button>
+                        </div>
+                    </div>
+                </div>
 
-                 <div class="topic-btn">
-    <div class="btn-content">
-        <span class="btn-icon">💾</span>
-        <div class="btn-text">
-            <h3>File Zilla</h3>
-            <p>En el ecosistema digital, si el dominio es la dirección de tu casa, el hosting web es el terreno y la estructura física donde guardas todas tus pertenencias. Sin un servicio de alojamiento, tu sitio web simplemente no podría existir en Internet. </p>
-            <button onclick="location.href='file_zilla.html'" class="real-btn">
-                Click aquí para ir a la página
-            </button>
-        </div>
-    </div>
-</div>
+                <div class="topic-btn">
+                    <div class="btn-content">
+                        <span class="btn-icon">📁</span>
+                        <div class="btn-text">
+                            <h3>FileZilla</h3>
+                            <p>Software de código abierto para transferencia FTP y SFTP.</p>
+                            <button onclick="location.href='file_zilla.html'" class="main-btn btn-gemini">Explorar</button>
+                        </div>
+                    </div>
+                </div>
 
-                 <div class="topic-btn">
-    <div class="btn-content">
-        <span class="btn-icon">💾</span>
-        <div class="btn-text">
-            <h3>Dominios y subdominios en la Web</h3>
-            <p>La arquitectura web organiza la identidad digital mediante una jerarquía que va desde el dominio raíz hasta los subdominios, permitiendo segmentar servicios y escalar proyectos multimedia de forma técnica. Su gestión se basa en registros DNS para la conectividad y certificados SSL para la seguridad, garantizando un ecosistema web profesional, seguro y optimizado para el posicionamiento. </p>
-            <button onclick="location.href='Dominios_y_Subdominios.html'" class="real-btn">
-                Click aquí para ir a la página
-            </button>
-        </div>
-    </div>
-</div>
-
-                
+                <div class="topic-btn">
+                    <div class="btn-content">
+                        <span class="btn-icon">🔗</span>
+                        <div class="btn-text">
+                            <h3>Dominios y Subdominios</h3>
+                            <p>Jerarquía, registros DNS y certificados SSL de seguridad.</p>
+                            <button onclick="location.href='Dominios_y_Subdominios.html'" class="main-btn btn-gemini">Explorar</button>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </main>
 
@@ -95,5 +94,21 @@
         </footer>
     </div>
 
+    <script>
+        // Lógica para desplegar el formulario
+        const regBtn = document.getElementById('regBtn');
+        const regForm = document.getElementById('regForm');
+
+        regBtn.addEventListener('click', () => {
+            regForm.classList.toggle('active');
+        });
+
+        // Cerrar al hacer clic fuera
+        window.addEventListener('click', (e) => {
+            if (!regBtn.contains(e.target) && !regForm.contains(e.target)) {
+                regForm.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
