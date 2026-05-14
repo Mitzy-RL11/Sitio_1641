@@ -8,32 +8,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos para el menú desplegable flotante */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .dropdown-form {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--sombra);
+            width: 300px;
+        }
+
+        .dropdown-form.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dropdown-form input, .dropdown-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">Norberto_Proyecto</div>
-        <div class="nav-menu">
-            <button class="btn-register" id="regBtn">Registrarse</button>
-            <div class="dropdown-form" id="regForm">
-                <h3>Registro de Usuario</h3>
-                <form action="registro.php" method="POST">
-                    <input type="text" name="nombre" placeholder="Nombre completo" required>
-                    <input type="email" name="correo" placeholder="Correo electrónico" required>
-                    <textarea name="comentario" placeholder="Comentario" rows="3"></textarea>
-                    <button type="submit" class="btn-send">Enviar Registro</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
     <main class="main-container">
         
-        <header class="main-header">
-            <div class="logo-area">
-                <span class="icon-server">🔗</span>
-                <h1 class="main-title">Arquitectura de Dominios</h1>
+        <!-- Barra de Navegación Actualizada -->
+        <nav class="navbar">
+            <div class="logo" style="font-weight: 600; color: var(--bugambilia);">Loyo Rios</div>
+            <div class="nav-menu">
+                <button class="main-btn btn-gemini" id="regBtn">Registrarse</button>
+                <div class="dropdown-form" id="regForm">
+                    <h3 style="margin-bottom: 15px;">Registro de Usuario</h3>
+                    <form action="registro.php" method="POST">
+                        <input type="text" name="nombre" placeholder="Nombre completo" required>
+                        <input type="email" name="correo" placeholder="Correo electrónico" required>
+                        <textarea name="comentario" placeholder="Comentario" rows="3"></textarea>
+                        <button type="submit" class="main-btn btn-gemini" style="width: 100%; justify-content: center;">Enviar Registro</button>
+                    </form>
+                </div>
             </div>
+        </nav>
+
+        <header class="main-header" style="margin-top: 30px;">
+            <h1 class="main-title">Arquitectura de Dominios</h1>
             <p class="subtitle">Ingeniería, Jerarquía y Gestión de Identidad Digital</p>
         </header>
 
@@ -52,7 +93,7 @@
                     <div class="btn-text">
                         <h3>Anatomía del FQDN</h3>
                         <p>Estructura: Subdominio + Dominio (SLD) + Extensión (TLD). Se lee de derecha a izquierda.</p>
-                        <button class="main-btn btn-gemini">Jerarquía Técnica</button>
+                        <button class="main-btn btn-gemini" style="margin-top: 10px;">Jerarquía Técnica</button>
                     </div>
                 </div>
             </article>
@@ -63,7 +104,7 @@
                     <div class="btn-text">
                         <h3>Tipología de Extensiones</h3>
                         <p><strong>gTLD:</strong> Genéricos (.com). <strong>ccTLD:</strong> Territoriales (.mx). <strong>sTLD:</strong> Patrocinados (.edu).</p>
-                        <button class="main-btn btn-gemini">Ver Categorías</button>
+                        <button class="main-btn btn-gemini" style="margin-top: 10px;">Ver Categorías</button>
                     </div>
                 </div>
             </article>
@@ -74,7 +115,7 @@
                     <div class="btn-text">
                         <h3>Subdominios vs Carpetas</h3>
                         <p>Los subdominios actúan como entidades independientes, mientras las carpetas heredan autoridad SEO.</p>
-                        <button class="main-btn btn-gemini">Comparativa</button>
+                        <button class="main-btn btn-gemini" style="margin-top: 10px;">Comparativa</button>
                     </div>
                 </div>
             </article>
@@ -85,7 +126,7 @@
                     <div class="btn-text">
                         <h3>Registros DNS Clave</h3>
                         <p><strong>A:</strong> IPv4. <strong>MX:</strong> Correo. <strong>CNAME:</strong> Alias. <strong>TXT:</strong> Seguridad.</p>
-                        <button class="main-btn btn-gemini">Configuración</button>
+                        <button class="main-btn btn-gemini" style="margin-top: 10px;">Configuración</button>
                     </div>
                 </div>
             </article>
@@ -96,7 +137,7 @@
                     <div class="btn-text">
                         <h3>Estatus de Propiedad</h3>
                         <p>Desde el registro activo hasta el Periodo de Gracia, Redención y finalmente la liberación pública.</p>
-                        <button class="main-btn btn-gemini">Línea de Tiempo</button>
+                        <button class="main-btn btn-gemini" style="margin-top: 10px;">Línea de Tiempo</button>
                     </div>
                 </div>
             </article>
@@ -107,7 +148,7 @@
                     <div class="btn-text">
                         <h3>Seguridad en la Capa 7</h3>
                         <p>Implementación de certificados Wildcard (*) y políticas HSTS para forzar HTTPS.</p>
-                        <button class="main-btn btn-gemini">Protocolos</button>
+                        <button class="main-btn btn-gemini" style="margin-top: 10px;">Protocolos</button>
                     </div>
                 </div>
             </article>
@@ -121,6 +162,13 @@
             </p>
         </section>
 
+        <!-- Botón de regreso a la sección ADMIN -->
+        <div style="margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 30px; text-align: center;">
+            <a href="ADMIN.html" class="main-btn btn-back">
+                <span>←</span> Volver a Administración
+            </a>
+        </div>
+
         <footer class="main-footer">
             <p>Diseñado para el programa de Ingeniería en Comunicación Multimedia</p>
             <p>&copy; 2026 MediaCode | Infraestructura Web</p>
@@ -129,15 +177,14 @@
     </main>
 
     <script>
-        // Lógica para desplegar el formulario de registro
         const regBtn = document.getElementById('regBtn');
         const regForm = document.getElementById('regForm');
 
-        regBtn.addEventListener('click', () => {
+        regBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             regForm.classList.toggle('active');
         });
 
-        // Cerrar al hacer clic fuera del menú
         window.addEventListener('click', (e) => {
             if (!regBtn.contains(e.target) && !regForm.contains(e.target)) {
                 regForm.classList.remove('active');
