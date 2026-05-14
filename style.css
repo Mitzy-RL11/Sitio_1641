@@ -1,11 +1,12 @@
 @charset "utf-8";
-/* CSS Document */
-/* Variables de color */
+
+/* 1. VARIABLES Y BASES (Conservado) */
 :root {
     --blanco: #FFFFFF;
     --bugambilia: #E01E5A;
     --amarillo: #FFD700;
     --oscuro: #2D2D2D;
+    --gris-claro: #f4f4f4;
 }
 
 * {
@@ -18,10 +19,11 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--blanco);
     color: var(--oscuro);
-    overflow: hidden; /* Evita scroll innecesario */
+    line-height: 1.6;
+    padding-top: 80px; /* Espacio para la navbar fija */
 }
 
-/* Barra de Navegación */
+/* 2. BARRA DE NAVEGACIÓN Y REGISTRO (Conservado y Unificado) */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -36,13 +38,10 @@ body {
 }
 
 .logo {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--bugambilia);
-}
-
-.nav-menu {
-    position: relative;
 }
 
 .btn-register {
@@ -63,32 +62,24 @@ body {
 /* Menú Desplegable Formulario */
 .dropdown-form {
     position: absolute;
-    right: 0;
-    top: 50px;
+    right: 5%;
+    top: 60px;
     background: var(--blanco);
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 10px;
-    width: 250px;
+    width: 280px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     display: none;
     animation: fadeInDown 0.4s ease forwards;
 }
 
-.dropdown-form.active {
-    display: block;
-}
-
-.dropdown-form h3 {
-    margin-bottom: 15px;
-    color: var(--bugambilia);
-    font-size: 1.1rem;
-}
+.dropdown-form.active { display: block; }
 
 .dropdown-form input, .dropdown-form textarea {
     width: 100%;
     margin-bottom: 10px;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: inherit;
@@ -99,20 +90,22 @@ body {
     background: var(--bugambilia);
     color: white;
     border: none;
-    padding: 8px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: 600;
 }
 
-/* Sección Central */
+/* 3. SECCIÓN HERO / CENTRAL (Centrado Absoluto con Flexbox) */
 .hero {
-    height: 100vh;
+    height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 0 20px;
+    animation: fadeInUp 0.8s ease; [cite: 18, 46, 60]
 }
 
 .main-title {
@@ -120,15 +113,32 @@ body {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: var(--oscuro);
-    animation: fadeInUp 0.8s ease;
 }
 
-.button-container {
-    display: flex;
-    gap: 20px;
-    animation: fadeInUp 1s ease; 
+/* 4. CUADRÍCULA DE TEMAS (Nuevo para ADMIN.html) */
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
 }
 
+.topic-btn {
+    background: var(--blanco);
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.topic-btn:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(224, 30, 90, 0.1);
+    border-color: var(--bugambilia);
+}
+
+/* 5. BOTONES E INTERACTIVIDAD (Unificado) */
 .main-btn {
     padding: 15px 30px;
     font-size: 1rem;
@@ -136,7 +146,9 @@ body {
     border: 2px solid var(--bugambilia);
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-gemini {
@@ -144,17 +156,13 @@ body {
     color: white;
 }
 
-.btn-algo {
+.btn-gemini:hover {
     background-color: transparent;
     color: var(--bugambilia);
-}
-
-/* Animaciones e Interactividad */
-.main-btn:hover {
-    transform: translateY(-5px); 
     box-shadow: 0 5px 15px rgba(224, 30, 90, 0.3);
 }
 
+/* 6. ANIMACIONES (Conservado) */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
