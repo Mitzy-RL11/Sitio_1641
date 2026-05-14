@@ -1,12 +1,17 @@
-@charset "utf-8";
+/* =========================================
+   SISTEMA DE DISEÑO: NORBERTO_PROYECTO 2.0
+   ESTILO: GLASSMORPHISM & PREMIUM UI
+   ========================================= */
 
-/* 1. VARIABLES Y BASES (Conservado) */
 :root {
-    --blanco: #FFFFFF;
     --bugambilia: #E01E5A;
+    --bugambilia-glass: rgba(224, 30, 90, 0.15);
     --amarillo: #FFD700;
-    --oscuro: #2D2D2D;
-    --gris-claro: #f4f4f4;
+    --oscuro: #1a1a1a;
+    --blanco: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --sombra: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
 * {
@@ -17,158 +22,120 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--blanco);
+    background-color: #f0f2f5; /* Fondo neutro para resaltar el vidrio */
+    background-image: radial-gradient(circle at 10% 20%, rgba(224, 30, 90, 0.05) 0%, transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 40%);
     color: var(--oscuro);
     line-height: 1.6;
-    padding-top: 80px; /* Espacio para la navbar fija */
+    min-height: 100vh;
 }
 
-/* 2. BARRA DE NAVEGACIÓN Y REGISTRO (Conservado y Unificado) */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background: var(--blanco);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+/* Contenedor Principal con Márgenes Reales */
+.main-container {
+    max-width: 1100px; /* Evita que el texto se estire demasiado en pantallas grandes */
+    margin: 0 auto;
+    padding: 40px 25px; /* Margen de seguridad para que no pegue a los bordes */
 }
 
-.logo {
+/* Títulos */
+h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--bugambilia);
-}
-
-.btn-register {
-    background-color: var(--amarillo);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.btn-register:hover {
-    transform: scale(1.05);
-    background-color: #f2cc00;
-}
-
-/* Menú Desplegable Formulario */
-.dropdown-form {
-    position: absolute;
-    right: 5%;
-    top: 60px;
-    background: var(--blanco);
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 10px;
-    width: 280px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    display: none;
-    animation: fadeInDown 0.4s ease forwards;
-}
-
-.dropdown-form.active { display: block; }
-
-.dropdown-form input, .dropdown-form textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: inherit;
-}
-
-.btn-send {
-    width: 100%;
-    background: var(--bugambilia);
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-/* 3. SECCIÓN HERO / CENTRAL (Centrado Absoluto con Flexbox) */
-.hero {
-    height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-    animation: fadeInUp 0.8s ease; [cite: 18, 46, 60]
+    margin-bottom: 20px;
 }
 
 .main-title {
-    font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: var(--oscuro);
+    color: var(--bugambilia);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* 4. CUADRÍCULA DE TEMAS (Nuevo para ADMIN.html) */
+/* Efecto Glassmorphism en Tarjetas */
+.welcome-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    padding: 40px; /* Espacio interno para el texto */
+    box-shadow: var(--sombra);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.welcome-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Cuadrícula de Contenido */
 .topics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
-    margin-top: 30px;
+    margin: 40px 0;
 }
 
+/* Botones de Temas (Tarjetas Interactivas) */
 .topic-btn {
-    background: var(--blanco);
-    border: 1px solid #eee;
-    border-radius: 15px;
+    background: white;
     padding: 25px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-radius: 15px;
+    border-bottom: 4px solid var(--bugambilia);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 .topic-btn:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(224, 30, 90, 0.1);
-    border-color: var(--bugambilia);
+    background: var(--bugambilia);
+    color: white;
+    transform: scale(1.03);
 }
 
-/* 5. BOTONES E INTERACTIVIDAD (Unificado) */
+/* Botones de Acción (Navegación) */
 .main-btn {
-    padding: 15px 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: 2px solid var(--bugambilia);
-    border-radius: 8px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
-    display: inline-block;
 }
 
 .btn-gemini {
-    background-color: var(--bugambilia);
+    background: var(--bugambilia);
     color: white;
 }
 
-.btn-gemini:hover {
-    background-color: transparent;
+.btn-back {
+    background: transparent;
+    border: 2px solid var(--bugambilia);
     color: var(--bugambilia);
-    box-shadow: 0 5px 15px rgba(224, 30, 90, 0.3);
+    margin-top: 20px;
 }
 
-/* 6. ANIMACIONES (Conservado) */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.btn-back:hover {
+    background: var(--bugambilia-glass);
+    transform: translateX(-5px);
 }
 
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Footer con Respiro */
+.main-footer {
+    text-align: center;
+    padding: 60px 20px 30px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .main-container { padding: 20px 15px; }
+    .main-title { font-size: 1.8rem; }
+    .welcome-card { padding: 20px; }
 }
