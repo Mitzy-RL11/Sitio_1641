@@ -4,118 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mastering Web Architecture | Dominios y Subdominios</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style_hub.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Fondo Animado (Circulos) -->
-    <div class="area-fondo">
-        <ul class="circulos">
-            <li></li><li></li><li></li><li></li><li></li>
-        </ul>
-    </div>
+    <nav class="navbar">
+        <div class="logo">Norberto_Proyecto</div>
+        <div class="nav-menu">
+            <button class="btn-register" id="regBtn">Registrarse</button>
+            <div class="dropdown-form" id="regForm">
+                <h3>Registro de Usuario</h3>
+                <form action="registro.php" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre completo" required>
+                    <input type="email" name="correo" placeholder="Correo electrónico" required>
+                    <textarea name="comentario" placeholder="Comentario" rows="3"></textarea>
+                    <button type="submit" class="btn-send">Enviar Registro</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Contenedor Principal -->
     <main class="main-container">
         
         <header class="main-header">
             <div class="logo-area">
-                <span class="icon-server">{ DNS_ROOT }</span>
-                <h1>Arquitectura de Dominios</h1>
+                <span class="icon-server">🔗</span>
+                <h1 class="main-title">Arquitectura de Dominios</h1>
             </div>
             <p class="subtitle">Ingeniería, Jerarquía y Gestión de Identidad Digital</p>
         </header>
 
-        <!-- Introducción Técnica -->
         <section class="welcome-card">
             <h2>El FQDN (Fully Qualified Domain Name)</h2>
             <p>
-                Un nombre de dominio es la traducción semántica de una dirección IP. En la ingeniería web, entender su jerarquía es vital: desde el <strong>Punto Raíz</strong> (implícito al final de cada URL), pasando por el <strong>TLD</strong>, hasta llegar a los <strong>Hostnames</strong> específicos. Esta estructura permite la escalabilidad global del sistema DNS.
+                Un nombre de dominio es la traducción semántica de una dirección IP. En la ingeniería web, entender su jerarquía es vital: desde el <strong>Punto Raíz</strong>, pasando por el <strong>TLD</strong>, hasta llegar a los <strong>Hostnames</strong> específicos.
             </p>
         </section>
 
         <div class="topics-grid">
             
-            <!-- 1. Anatomía y FQDN -->
-            <article class="topic-btn dynamic-btn">
+            <article class="topic-btn">
                 <div class="btn-content">
                     <span class="btn-icon">🧩</span>
                     <div class="btn-text">
                         <h3>Anatomía del FQDN</h3>
-                        <p><strong>Estructura:</strong> Subdominio + Dominio (SLD) + Extensión (TLD). Se lee de derecha a izquierda en la jerarquía del servidor raíz.</p>
-                        <button class="real-btn">Jerarquía Técnica</button>
+                        <p>Estructura: Subdominio + Dominio (SLD) + Extensión (TLD). Se lee de derecha a izquierda.</p>
+                        <button class="main-btn btn-gemini">Jerarquía Técnica</button>
                     </div>
                 </div>
             </article>
 
-            <!-- 2. Clasificación de TLDs -->
             <article class="topic-btn">
                 <div class="btn-content">
                     <span class="btn-icon">🌍</span>
                     <div class="btn-text">
                         <h3>Tipología de Extensiones</h3>
-                        <p><strong>gTLD:</strong> Genéricos (.com, .net).<br><strong>ccTLD:</strong> Territoriales (.mx, .es).<br><strong>sTLD:</strong> Patrocinados (.edu, .gov).</p>
-                        <button class="real-btn">Ver Categorías</button>
+                        <p><strong>gTLD:</strong> Genéricos (.com). <strong>ccTLD:</strong> Territoriales (.mx). <strong>sTLD:</strong> Patrocinados (.edu).</p>
+                        <button class="main-btn btn-gemini">Ver Categorías</button>
                     </div>
                 </div>
             </article>
 
-            <!-- 3. Estrategia de Subdominios -->
             <article class="topic-btn">
                 <div class="btn-content">
                     <span class="btn-icon">🌳</span>
                     <div class="btn-text">
-                        <h3>Subdominios vs Subcarpetas</h3>
-                        <p>Los subdominios actúan como entidades independientes (útil para apps o blogs), mientras que las carpetas heredan la autoridad SEO.</p>
-                        <button class="real-btn">Comparativa</button>
+                        <h3>Subdominios vs Carpetas</h3>
+                        <p>Los subdominios actúan como entidades independientes, mientras las carpetas heredan autoridad SEO.</p>
+                        <button class="main-btn btn-gemini">Comparativa</button>
                     </div>
                 </div>
             </article>
 
-            <!-- 4. Gestión de Registros DNS -->
             <article class="topic-btn">
                 <div class="btn-content">
                     <span class="btn-icon">⚡</span>
                     <div class="btn-text">
                         <h3>Registros DNS Clave</h3>
-                        <p><strong>A:</strong> IPv4.<br><strong>AAAA:</strong> IPv6.<br><strong>MX:</strong> Correo.<br><strong>CNAME:</strong> Alias de servidor.<br><strong>TXT:</strong> Verificación y seguridad.</p>
-                        <button class="real-btn">Configuración</button>
+                        <p><strong>A:</strong> IPv4. <strong>MX:</strong> Correo. <strong>CNAME:</strong> Alias. <strong>TXT:</strong> Seguridad.</p>
+                        <button class="main-btn btn-gemini">Configuración</button>
                     </div>
                 </div>
             </article>
 
-            <!-- 5. Ciclo de Vida del Dominio -->
             <article class="topic-btn">
                 <div class="btn-content">
                     <span class="btn-icon">⏳</span>
                     <div class="btn-text">
                         <h3>Estatus de Propiedad</h3>
-                        <p>Desde el registro activo hasta el Periodo de Gracia, Redención y finalmente la liberación (Pending Delete) al mercado público.</p>
-                        <button class="real-btn">Línea de Tiempo</button>
+                        <p>Desde el registro activo hasta el Periodo de Gracia, Redención y finalmente la liberación pública.</p>
+                        <button class="main-btn btn-gemini">Línea de Tiempo</button>
                     </div>
                 </div>
             </article>
 
-            <!-- 6. Seguridad y SSL Wildcard -->
             <article class="topic-btn">
                 <div class="btn-content">
                     <span class="btn-icon">🛡️</span>
                     <div class="btn-text">
                         <h3>Seguridad en la Capa 7</h3>
-                        <p>Implementación de certificados <strong>Wildcard (*)</strong> para proteger todos los subdominios y políticas HSTS para forzar HTTPS.</p>
-                        <button class="real-btn">Protocolos</button>
+                        <p>Implementación de certificados Wildcard (*) y políticas HSTS para forzar HTTPS.</p>
+                        <button class="main-btn btn-gemini">Protocolos</button>
                     </div>
                 </div>
             </article>
 
         </div>
 
-        <!-- Sección de Detalles Adicionales (Opcional para expandir) -->
-        <section class="welcome-card" style="margin-top: 40px; border-left: 4px solid var(--secondary);">
+        <section class="welcome-card" style="margin-top: 40px; border-left: 5px solid var(--bugambilia);">
             <h3>Resumen Estratégico</h3>
             <p>
-                Para proyectos multimedia, la elección de un dominio impacta directamente en la latencia (vía DNS), el prestigio de marca y la facilidad de mantenimiento de servicios distribuidos en diferentes subdominios.
+                Para proyectos multimedia, la elección de un dominio impacta directamente en la latencia, el prestigio de marca y la facilidad de mantenimiento de servicios distribuidos.
             </p>
         </section>
 
@@ -126,5 +128,21 @@
 
     </main>
 
+    <script>
+        // Lógica para desplegar el formulario de registro
+        const regBtn = document.getElementById('regBtn');
+        const regForm = document.getElementById('regForm');
+
+        regBtn.addEventListener('click', () => {
+            regForm.classList.toggle('active');
+        });
+
+        // Cerrar al hacer clic fuera del menú
+        window.addEventListener('click', (e) => {
+            if (!regBtn.contains(e.target) && !regForm.contains(e.target)) {
+                regForm.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
