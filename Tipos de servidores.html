@@ -3,78 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infraestructura Web | Conceptos Clave</title>
-    <link rel="stylesheet" href="styleone.css">
+    <title>Mastering Web Architecture | Tipos de Servidores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">Tipos de servidores</div>
-        <ul class="nav-links">
-            <li><a href="#servidores">Servidores</a></li>
-            <li><a href="#hardware">Hardware</a></li>
-            <li><a href="#software">Software</a></li>
-            <li><a href="#workflow">Forma de Trabajo</a></li>
-        </ul>
-    </nav>
+    <main class="main-container" style="padding-top: 40px;">
+        
+        <header class="main-header">
+            <div class="logo-area">
+                <span class="icon-server">🗄️</span>
+                <h1 class="main-title">Tipos de Servidores y Arquitectura</h1>
+            </div>
+            <p class="subtitle">Explorando los cimientos físicos y lógicos del ecosistema digital.</p>
+        </header>
 
-    <header class="hero">
-        <h1>Servidores y Arquitectura</h1>
-        <p>Explorando los cimientos del ecosistema digital moderno.</p>
-    </header>
+        <section class="welcome-card">
+            <h2>Infraestructura de Software</h2>
+            <p>
+                Los servidores web son los encargados de despachar el contenido a los usuarios finales. Dependiendo de la tecnología, ofrecen distintos niveles de estabilidad y escalabilidad.
+            </p>
+        </section>
 
-    <main>
-        <section id="servidores" class="section-block">
-            <h2>Tipos de Servidores Web</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Apache / Nginx</h3>
-                    <p>Los estándares de la industria para servir contenido estático y dinámico con alta estabilidad.</p>
+        <div class="topics-grid">
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">🌐</span>
+                    <div class="btn-text">
+                        <h3>Apache / Nginx</h3>
+                        <p>Estándares de la industria para servir contenido estático y dinámico con alta estabilidad.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Servidores Locales</h3>
-                    <p>Entornos de desarrollo controlados (como XAMPP o contenedores Docker) para pruebas antes del despliegue.</p>
+            </article>
+
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">💻</span>
+                    <div class="btn-text">
+                        <h3>Servidores Locales</h3>
+                        <p>Entornos controlados (XAMPP / Docker) para realizar pruebas críticas antes del despliegue.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Cloud Servers</h3>
-                    <p>Instancias virtuales escalables que permiten ajustar recursos según la demanda en tiempo real.</p>
+            </article>
+
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">☁️</span>
+                    <div class="btn-text">
+                        <h3>Cloud Servers</h3>
+                        <p>Instancias virtuales escalables que permiten ajustar recursos según la demanda en tiempo real.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+            
+            <section class="welcome-card" style="margin: 0; border-top: 5px solid var(--amarillo);">
+                <h3>Componentes de Hardware</h3>
+                <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                    <li style="margin-bottom: 10px;"><strong>🧠 CPU:</strong> Procesadores multinúcleo para tareas paralelas.</li>
+                    <li style="margin-bottom: 10px;"><strong>⚡ RAM:</strong> Memoria de alta velocidad para peticiones simultáneas.</li>
+                    <li style="margin-bottom: 10px;"><strong>💾 NVMe:</strong> Almacenamiento ultra rápido para reducir latencia.</li>
+                </ul>
+            </section>
+
+            <section class="welcome-card" style="margin: 0; border-top: 5px solid var(--bugambilia);">
+                <h3>Stack de Software</h3>
+                <p>
+                    El sistema operativo (comúnmente <strong>Linux</strong>) actúa como la base sobre la cual se ejecutan bases de datos (MySQL) y lenguajes de backend.
+                </p>
+                <span class="main-btn btn-gemini" style="display: inline-block; margin-top: 10px;">Stack Tecnológico</span>
+            </section>
+        </div>
+
+        <section class="welcome-card" style="margin-top: 40px; background-color: var(--oscuro); color: var(--blanco);">
+            <h2 style="color: var(--amarillo);">Forma de Trabajo: Request-Response</h2>
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                <div style="padding: 15px; border-left: 3px solid var(--bugambilia); background: rgba(255,255,255,0.05);">
+                    <strong>1. Petición (Request):</strong> El cliente solicita datos vía protocolo HTTP.
+                </div>
+                <div style="padding: 15px; border-left: 3px solid var(--amarillo); background: rgba(255,255,255,0.05);">
+                    <strong>2. Procesamiento:</strong> El servidor procesa la lógica y consulta la base de datos.
+                </div>
+                <div style="padding: 15px; border-left: 3px solid var(--blanco); background: rgba(255,255,255,0.05);">
+                    <strong>3. Respuesta (Response):</strong> Se envían los archivos finales al navegador del usuario.
                 </div>
             </div>
         </section>
 
-        <section id="hardware" class="section-block bg-alt">
-            <h2>Hardware</h2>
-            <p>La potencia física detrás del código. Se compone de componentes críticos diseñados para el funcionamiento 24/7:</p>
-            <ul>
-                <li><strong>Procesadores (CPU):</strong> Unidades de múltiples núcleos optimizadas para procesos paralelos.</li>
-                <li><strong>Memoria RAM:</strong> Alta velocidad para gestionar peticiones simultáneas de usuarios.</li>
-                <li><strong>Almacenamiento (SSD/NVMe):</strong> Prioridad en la velocidad de lectura y escritura para reducir la latencia.</li>
-            </ul>
-        </section>
+        <footer class="main-footer" style="margin-top: 60px;">
+            <p>Ingeniería en Comunicación Multimedia | Infraestructura Web</p>
+            <p>&copy; 2026 Norberto_Proyecto | MediaCode</p>
+        </footer>
 
-        <section id="software" class="section-block">
-            <h2>Software de Servidor</h2>
-            <div class="content-flex">
-                <div class="text">
-                    <p>El sistema operativo (comúnmente distribuciones de <strong>Linux</strong> como Ubuntu o CentOS) actúa como la base, sobre la cual se ejecutan bases de datos (MySQL, PostgreSQL) y lenguajes de backend.</p>
-                </div>
-                <div class="badge">Stack Tecnológico</div>
-            </div>
-        </section>
-
-        <section id="workflow" class="section-block bg-dark">
-            <h2 class="text-white">Forma de Trabajo</h2>
-            <div class="steps">
-                <div class="step">1. Petición (Request) del cliente vía HTTP.</div>
-                <div class="step">2. Procesamiento del servidor y consulta a base de datos.</div>
-                <div class="step">3. Respuesta (Response) enviando los archivos al navegador.</div>
-            </div>
-        </section>
     </main>
-
-    <footer>
-        <p>&copy; 2026 - Ingeniería en Comunicación Multimedia</p>
-    </footer>
 
 </body>
 </html>
