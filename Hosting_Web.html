@@ -3,95 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo sobre el Hosting Web - Tu Guía Completa</title>
-    <link rel="stylesheet" href="stylee.css">
+    <title>Mastering Web Architecture | Hosting Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para elementos multimedia de esta página */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        .grid-videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Todo lo que necesitas saber sobre el Hosting Web</h1>
+
+    <main class="main-container" style="padding-top: 40px;">
+        
+        <header class="main-header">
+            <div class="logo-area">
+                <span class="icon-server">🖥️</span>
+                <h1 class="main-title">Infraestructura de Hosting Web</h1>
+            </div>
             <p class="subtitle">Tu terreno y estructura física en el ecosistema digital.</p>
+        </header>
+
+        <section class="welcome-card">
+            <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2>¿Qué es el Alojamiento?</h2>
+                    <p>
+                        Si el dominio es la dirección de tu casa, el <strong>hosting web</strong> es el terreno y la estructura física. Es un servidor potente que funciona las 24 horas para que tus archivos (HTML, JS, imágenes) estén siempre disponibles globalmente.
+                    </p>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    <img src="https://www.sigmasoftwares.org/images/icons/Web-Hosting.png" alt="Icono Hosting" class="img-fluid" style="max-width: 200px;">
+                </div>
+            </div>
+        </section>
+
+        <h2 style="text-align: center; margin: 40px 0 20px; font-family: 'Montserrat';">Tipología de Servidores</h2>
+        <div class="topics-grid">
+            
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">🤝</span>
+                    <div class="btn-text">
+                        <h3>Hosting Compartido</h3>
+                        <p>Varios sitios comparten CPU y RAM. Es la opción más económica para proyectos iniciales.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">🔒</span>
+                    <div class="btn-text">
+                        <h3>VPS (Servidor Privado)</h3>
+                        <p>Partición virtual con recursos dedicados. Equilibrio perfecto entre costo y potencia.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">🚀</span>
+                    <div class="btn-text">
+                        <h3>Hosting Dedicado</h3>
+                        <p>Un servidor físico exclusivo para ti. Máximo control, seguridad y rendimiento para alto tráfico.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="topic-btn">
+                <div class="btn-content">
+                    <span class="btn-icon">☁️</span>
+                    <div class="btn-text">
+                        <h3>Cloud Hosting</h3>
+                        <p>Red de servidores interconectados. Garantiza disponibilidad total mediante redundancia.</p>
+                    </div>
+                </div>
+            </article>
         </div>
-    </header>
 
-    <main class="container">
-        <section class="introduccion">
-            <div class="texto">
-                <p>En el ecosistema digital, si el dominio es la dirección de tu casa, el hosting web es el terreno y la estructura física donde guardas todas tus pertenencias. Sin un servicio de alojamiento, tu sitio web simplemente no podría existir en Internet.</p>
-            </div>
-            <div class="imagen">
-                <img src="https://www.sigmasoftwares.org/images/icons/Web-Hosting.png" alt="Analogía de Hosting: Casa y Terreno">
-            </div>
-        </section>
-
-        <section class="que-es">
-            <h2>¿Qué es el Hosting Web?</h2>
-            <p>El hosting o alojamiento web es un servicio que permite a organizaciones e individuos publicar un sitio web o aplicación en la red. Cuando contratas este servicio, básicamente estás alquilando un espacio en un servidor físico que funciona las 24 horas del día para que tu contenido esté siempre disponible.</p>
-            <p>Un servidor es una computadora potente que almacena todos los archivos que componen tu sitio: imágenes, textos, bases de datos y archivos de código (.html, .js, .php).</p>
-        </section>
-
-        <section class="tipos-hosting">
-            <h2>Tipos de Hosting: ¿Cuál elegir?</h2>
-            <p>No todos los sitios web tienen las mismas necesidades. Elegir el tipo correcto depende del tráfico esperado y del presupuesto.</p>
-            <div class="grid-tipos">
-                <article>
-                    <h3>Hosting Compartido</h3>
-                    <p>Es el más popular para principiantes. Varios sitios web comparten los recursos (CPU, RAM) de un mismo servidor. Es económico, pero el rendimiento puede verse afectado por el tráfico de otros usuarios.</p>
-                </article>
-                <article>
-                    <h3>VPS (Servidor Virtual Privado)</h3>
-                    <p>Se particiona un servidor físico en varios servidores virtuales independientes. Tienes recursos dedicados, ofreciendo un equilibrio entre costo y potencia.</p>
-                </article>
-                <article>
-                    <h3>Hosting Dedicado</h3>
-                    <p>Tienes un servidor completo para ti. Es ideal para sitios de alto tráfico o aplicaciones complejas que requieren máxima seguridad y control.</p>
-                </article>
-                <article>
-                    <h3>Cloud Hosting</h3>
-                    <p>Utiliza una red de servidores interconectados. Si un servidor falla, otro toma su lugar, lo que garantiza una disponibilidad casi total (99.9%).</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="componentes-clave">
-            <h2>Componentes Clave de un Buen Servicio</h2>
-            <p>Al investigar un proveedor, debes fijarte en estos cuatro pilares técnicos:</p>
-            <ul>
-                <li><strong>Uptime (Tiempo de actividad):</strong> El porcentaje de tiempo que el servidor está en línea. Busca siempre valores superiores al 99.5%.</li>
-                <li><strong>Ancho de Banda:</strong> La cantidad de datos que tu sitio puede transferir a los visitantes en un mes.</li>
-                <li><strong>Almacenamiento (SSD vs HDD):</strong> Los discos SSD son significativamente más rápidos, lo que mejora la velocidad de carga de tu página.</li>
-                <li><strong>Seguridad:</strong> Debe incluir certificados SSL (HTTPS), copias de seguridad automáticas y protección contra ataques DDoS.</li>
-
+        <section class="welcome-card" style="margin-top: 40px;">
+            <h2>Pilares de Calidad</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 15px;"><strong>⚡ Uptime:</strong> Tiempo en línea. El estándar profesional es >99.9%.</li>
+                <li style="margin-bottom: 15px;"><strong>💾 Almacenamiento SSD:</strong> Velocidad de lectura/escritura superior para carga rápida.</li>
+                <li style="margin-bottom: 15px;"><strong>🛡️ Seguridad SSL:</strong> Cifrado de datos y protección contra ataques DDoS.</li>
             </ul>
         </section>
 
-        <section class="panel-control">
-            <h2>La Importancia del Panel de Control</h2>
-            <p>Para gestionar tu hosting sin ser un experto en programación, los proveedores ofrecen interfaces gráficas. Las más comunes son:</p>
-            <ul>
-                <li>cPanel</li>
-                <li>Plesk</li>
-                <li>hPanel</li>
-            </ul>
+        <section style="margin-top: 40px;">
+            <h2 style="text-align: center; margin-bottom: 25px; font-family: 'Montserrat';">Recursos Audiovisuales</h2>
+            <div class="grid-videos">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YZWRvLeT_KU" title="¿Qué es un Hosting?" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/hvIlTs2YVUI" title="Tipos de Hosting" allowfullscreen></iframe>
+                </div>
+            </div>
         </section>
 
-        <section class="videos">
-    <h2>Videos Explicativos</h2>
-    <div class="grid-videos">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/YZWRvLeT_KU" title="¿Qué es un Hosting?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/hvIlTs2YVUI" title="Tipos de Hosting" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-    </div>
-</section>
+        <footer class="main-footer" style="margin-top: 60px;">
+            <p>Ingeniería en Comunicación Multimedia | Infraestructura Web</p>
+            <p>&copy; 2026 Norberto_Proyecto | MediaCode</p>
+        </footer>
+
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Tu Sitio de Hosting. Todos los derechos reservados.</p>
-        </div>
-    </footer>
 </body>
 </html>
