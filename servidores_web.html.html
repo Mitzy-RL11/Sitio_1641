@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema III: Servidores Web y Hosting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            overflow-y: auto !important;
+        }
+
+        .media-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Contenedores multimedia */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            background: var(--oscuro);
+            margin-top: 15px;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .audio-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: var(--oscuro);
+            color: var(--blanco);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .audio-wrapper audio {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Grid de Servidores Web */
+        .server-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .server-card {
+            background: var(--blanco);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .server-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--bugambilia);
+        }
+
+        .server-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* Tabla comparativa de Hosting */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .tech-table th {
+            background-color: var(--oscuro);
+            color: var(--blanco);
+            text-align: left;
+            padding: 12px;
+            font-weight: 600;
+        }
+
+        .tech-table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .tech-table tr:nth-child(even) {
+            background-color: rgba(0,0,0,0.02);
+        }
+
+        .badge-hosting {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: var(--bugambilia);
+        }
+        .badge-shared { background-color: #4A5568; }
+        .badge-vps { background-color: var(--bugambilia); }
+        .badge-cloud { background-color: #3182CE; }
+        .badge-dedicated { background-color: #2F855A; }
+    </style>
+</head>
+<body>
+
+    <main class="main-container">
+        <nav class="navbar" style="position: static; box-shadow: none; padding: 20px 0;">
+            <div class="logo" style="font-weight: 600; color: var(--bugambilia);">Loyo Rios</div>
+            <div class="nav-menu">
+                <a href="ADMIN.html" class="main-btn btn-gemini" style="text-decoration: none;">Volver al Panel</a>
+            </div>
+        </nav>
+
+        <header class="main-header" style="margin-top: 20px;">
+            <h1 class="main-title" style="font-size: 2.3rem;">Módulo III: Servidores Web y Almacenamiento</h1>
+            <p class="subtitle">Software de Despacho HTTP y Modelos de Alojamiento en la Nube</p>
+        </header>
+
+        <section class="welcome-card" style="text-align: left; margin-top: 20px;">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                3.1 Tipos de Servidores Web (Software)
+            </h2>
+            <p style="margin-top: 15px; line-height: 1.6;">
+                Un **Servidor Web** es el software encargado de procesar las solicitudes del lado del cliente utilizando el protocolo HTTP/HTTPS, despachando páginas HTML, hojas de estilo CSS, scripts y recursos multimedia. Los principales motores del mercado son:
+            </p>
+
+            <div class="server-grid">
+                <div class="server-card">
+                    <span class="server-icon">🦅</span>
+                    <h4 style="color: var(--oscuro); margin-bottom: 8px;">Apache HTTP Server</h4>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Estructura modular basada en procesos. Altamente compatible, confiable y configurable mediante archivos <code>.htaccess</code>.</p>
+                </div>
+                <div class="server-card">
+                    <span class="server-icon">⚡</span>
+                    <h4 style="color: var(--oscuro); margin-bottom: 8px;">Nginx</h4>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Arquitectura asíncrona orientada a eventos. Destaca por su alta velocidad, bajo consumo de RAM y excelente rol como proxy inverso.</p>
+                </div>
+                <div class="server-card">
+                    <span class="server-icon">🪟</span>
+                    <h4 style="color: var(--oscuro); margin-bottom: 8px;">Microsoft IIS</h4>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Internet Information Services. Motor propietario para entornos Windows Server, optimizado para aplicaciones .NET y bases de datos SQL Server.</p>
+                </div>
+                <div class="server-card">
+                    <span class="server-icon">🐉</span>
+                    <h4 style="color: var(--oscuro); margin-bottom: 8px;">LiteSpeed</h4>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Alternativa comercial de alto rendimiento. Reemplazo directo de Apache que optimiza drásticamente la carga de CMS como WordPress.</p>
+                </div>
+            </div>
+
+            <div class="media-card" style="background: rgba(0,0,0,0.02); margin-top: 25px;">
+                <h3 style="font-size: 1.1rem; color: var(--oscuro);">🎙️ Audioguía: Apache vs Nginx ¿Cuál elegir?</h3>
+                <div class="audio-wrapper">
+                    <span>🔊</span>
+                    <audio controls>
+                        <source src="audio/apache_vs_nginx.mp3" type="audio/mpeg">
+                        Tu navegador no soporta la reproducción de audio HTML5.
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <section class="welcome-card" style="text-align: left; margin-top: 30px;">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                3.2 Hosting Web (Modelos de Alojamiento)
+            </h2>
+            <p style="margin-top: 15px; line-height: 1.6;">
+                El Hosting Web es el servicio que provee el espacio físico y lógico en un servidor para almacenar los archivos de un sitio web de modo que sea accesible globalmente en Internet. Se clasifican según su arquitectura y distribución de recursos:
+            </p>
+
+            <table class="tech-table">
+                <thead>
+                    <tr>
+                        <th>Modelo de Hosting</th>
+                        <th>Aislamiento de Recursos</th>
+                        <th>Ventaja Principal</th>
+                        <th>Uso Recomendado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge-hosting badge-shared">Compartido (Shared)</span></td>
+                        <td>Ninguno (Recursos compartidos)</td>
+                        <td>Costo muy accesible</td>
+                        <td>Blogs personales, sitios web informativos pequeños.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-hosting badge-vps">Servidor Virtual Privado (VPS)</span></td>
+                        <td>Virtualizado por hipervisor</td>
+                        <td>Raíz (Root) y RAM dedicada</td>
+                        <td>E-commerce medianos, aplicaciones web en desarrollo.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-hosting badge-cloud">Cloud Hosting</span></td>
+                        <td>Red distribuida de nodos</td>
+                        <td>Escalabilidad inmediata</td>
+                        <td>Plataformas con picos masivos de tráfico imprevistos.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-hosting badge-dedicated">Servidor Dedicado</span></td>
+                        <td>100% físico exclusivo</td>
+                        <td>Máxima potencia y seguridad</td>
+                        <td>Sistemas bancarios, corporativos o Big Data empresarial.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+           <div class="media-card" style="margin-top: 30px;">
+    <h3 style="font-size: 1.1rem; color: var(--oscuro);">🎬 Video Didáctico: Cómo viajan los datos desde el Alojamiento Web</h3>
+    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Animación explicativa sobre la relación entre el Dominio, el Hosting y el Servidor Web despachando peticiones.</p>
+    <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+        <!-- Reproductor de YouTube responsivo e integrado -->
+        <iframe 
+            src="https://www.youtube.com/embed/uV5dSBzAUIk" 
+            title="Cómo viajan los datos desde el Alojamiento Web" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+        </iframe>
+    </div>
+</div>
+        </section>
+
+        <div style="margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 30px; text-align: center;">
+            <a href="ADMIN.html" class="main-btn btn-back" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <span>←</span> Volver al Módulo de Control General
+            </a>
+        </div>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 Rodríguez Loyo Mitzy Angela & Rios Santiago Abraham</p>
+            <p style="font-size: 0.8rem; margin-top: 5px;">Ingeniería en Comunicación Multimedia</p>
+        </footer>
+    </main>
+
+</body>
+</html>

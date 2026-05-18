@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema IV: Administrar Servidor Web</title>
+    <!-- Fuentes e Identidad Visual -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Estilos de Refinamiento Visual Premium -->
+    <style>
+        :root {
+            --glow-color: rgba(216, 27, 96, 0.15);
+            --bg-glass: rgba(255, 255, 255, 0.45);
+            --border-glass: rgba(255, 255, 255, 0.6);
+        }
+
+        body {
+            overflow-y: auto !important;
+            background-attachment: fixed;
+        }
+
+        /* Título Principal con Gradiente Multimedia */
+        .main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--oscuro) 30%, var(--bugambilia) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        /* Tarjetas de Contenido Estilo Bento-Box (Glassmorphism Avanzado) */
+        .welcome-card-premium {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .welcome-card-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 30px 50px rgba(216, 27, 96, 0.06), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+        }
+
+        /* Encabezados de Sección Elegantes */
+        .section-title-premium {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--oscuro);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        .section-title-premium::before {
+            content: '';
+            width: 6px;
+            height: 28px;
+            background: linear-gradient(to bottom, var(--bugambilia), var(--amarillo));
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* Caja Destacada para Conceptos Clave (public_html) */
+        .highlight-box-premium {
+            background: linear-gradient(135deg, rgba(216, 27, 96, 0.04) 0%, rgba(252, 211, 77, 0.04) 100%);
+            border-left: 4px solid var(--bugambilia);
+            padding: 20px 25px;
+            border-radius: 4px 16px 16px 4px;
+            margin: 25px 0;
+            line-height: 1.7;
+        }
+
+        /* Listas de Información Estilizadas */
+        .info-list-premium {
+            list-style: none;
+            padding-left: 0;
+            margin: 20px 0;
+        }
+
+        .info-list-premium li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+
+        .info-list-premium li::before {
+            content: '✓';
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            color: var(--bugambilia);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Contenedores Multimedia de Alta Fidelidad */
+        .media-card-premium {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 18px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        .video-wrapper-premium {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 25px 55px rgba(0, 0, 0, 0.2);
+            background: #0d0d0d;
+            margin-top: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .video-wrapper-premium video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Reproductor de Audio Premium Minimalista */
+        .audio-container-premium {
+            background: var(--oscuro);
+            padding: 20px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .audio-container-premium audio {
+            flex-grow: 1;
+            filter: invert(0.9) hue-rotate(180deg); /* Sincroniza el reproductor nativo con el tema oscuro */
+        }
+
+        /* Consola de Simulación FTP Cinematográfica */
+        .terminal-premium {
+            background: #121214;
+            border-radius: 14px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+            font-family: 'Fira Code', monospace;
+            color: #e4e4e7;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            border: 1px solid #27272a;
+            position: relative;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #27272a;
+            padding-bottom: 12px;
+            color: #71717a;
+            font-size: 0.8rem;
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+        .dot-r { background: #ef4444; }
+        .dot-y { background: #f59e0b; }
+        .dot-g { background: #10b981; }
+
+        .t-success { color: #10b981; }
+        .t-warn { color: #f59e0b; }
+        .t-info { color: #3b82f6; }
+    </style>
+</head>
+<body>
+
+    <main class="main-container">
+        <!-- Barra de Navegación -->
+        <nav class="navbar" style="backdrop-filter: blur(10px); background: rgba(255,255,255,0.8);">
+            <div class="logo" style="letter-spacing: -0.5px;">Loyo <span style="color: var(--bugambilia);">Rios</span></div>
+            <div class="nav-menu">
+                <a href="ADMIN.html" class="main-btn btn-gemini" style="box-shadow: 0 4px 15px var(--glow-color); text-decoration: none;">Volver al Panel</a>
+            </div>
+        </nav>
+
+        <!-- Encabezado Principal -->
+        <header class="main-header" style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+            <h1 class="main-title">Módulo IV: Administrar Servidor Web</h1>
+            <p class="subtitle" style="font-weight: 400; color: #555; max-width: 600px; margin: 10px auto 0;">Interfaces de Gestión, Control de Archivos y Protocolos de Transferencia</p>
+        </header>
+
+        <!-- SECCIÓN 4.1: CPANEL -->
+        <section class="welcome-card-premium">
+            <h2 class="section-title-premium">4.1 cPanel de Servidor Web</h2>
+            <p style="line-height: 1.7; color: #3f3f46;">
+                El **cPanel** es un panel de control gráfico simplificado basado en Linux que automatiza la administración de servicios de alojamiento web. Funciona mediante un cuadro de mando de administración integral que permite delegar tareas complejas de gestión de sistemas a través de una interfaz interactiva de clics intuitivos. Sus facultades críticas incluyen:
+            </p>
+            
+            <ul class="info-list-premium">
+                <li><strong>Gestión de Dominios:</strong> Creación y mapeo de subdominios, alias de correo y redireccionamientos DNS.</li>
+                <li><strong>Administración de Datos:</strong> Creación de bases de datos relacionales MySQL / MariaDB y control de accesos vía phpMyAdmin.</li>
+                <li><strong>Seguridad Integrada:</strong> Instalación de módulos SSH/TLS, restricción de direcciones IP y firewalls de aplicaciones web.</li>
+            </ul>
+
+            <!-- Audioguía -->
+            <div class="media-card-premium">
+                <h3 style="font-family: 'Poppins', sans-serif; font-size: 1.1rem; color: var(--oscuro); font-weight: 600; margin-bottom: 5px;">🎙️ Audioguía: Introducción Práctica al Entorno cPanel</h3>
+                <p style="font-size: 0.9rem; color: #71717a; margin-bottom: 15px;">Conceptos básicos del entorno gráfico y optimización de recursos del servidor.</p>
+                <div class="audio-container-premium">
+                    <span style="font-size: 1.3rem;">🔊</span>
+                    <audio controls>
+                        <source src="audio/introduccion_cpanel.mp3" type="audio/mpeg">
+                        Tu navegador no soporta la reproducción de audio HTML5.
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4.2: ADMINISTRADOR DE ARCHIVOS -->
+        <section class="welcome-card-premium">
+            <h2 class="section-title-premium">4.2 Administrador de Archivos</h2>
+            <p style="line-height: 1.7; color: #3f3f46;">
+                Es la herramienta web nativa del panel que permite manipular directamente la estructura del árbol de directorios del servidor remoto. Evita depender obligatoriamente de software externo de terceros al permitir cargar, comprimir, extraer, renombrar y editar archivos de código fuente en tiempo real.
+            </p>
+            
+            <div class="highlight-box-premium">
+                <strong>📍 Espacio de Despliegue Crítico:</strong><br>
+                El núcleo central de la visibilidad en Internet reside en el directorio público <code style="font-family: 'Fira Code', monospace; color: var(--bugambilia); background: rgba(216,27,96,0.08); padding: 2px 6px; border-radius: 4px; font-weight: 500;">public_html</code>. Este es el espacio exclusivo donde deben alojarse los documentos raíz del proyecto (como el archivo <code style="font-family: 'Fira Code', monospace;">index.html</code>) para que el software del servidor web los reconozca y despache de manera pública a las solicitudes del navegador.
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4.3: FTP -->
+        <section class="welcome-card-premium">
+            <h2 class="section-title-premium">4.3 Protocolo de Transferencia de Archivos (FTP)</h2>
+            <p style="line-height: 1.7; color: #3f3f46;">
+                El protocolo **FTP** (File Transfer Protocol) es el estándar de red utilizado para transferir archivos masivos de datos entre un sistema cliente local y el servidor remoto. Utiliza un modelo de arquitectura de conexión de control por el puerto **TCP 21** y transferencia de flujo de datos por el puerto **TCP 20**. Para operaciones de desarrollo profesional se emplean clientes avanzados de escritorio como *FileZilla* bajo conexiones cifradas seguras (**SFTP**).
+            </p>
+
+            <!-- Consola FTP Interactiva -->
+            <div class="terminal-premium">
+                <div class="terminal-header">
+                    <div style="display: flex; gap: 6px; flex-grow: 1;">
+                        <span class="dot dot-r"></span>
+                        <span class="dot dot-y"></span>
+                        <span class="dot dot-g"></span>
+                    </div>
+                    <span>ftp_client_session.sh</span>
+                </div>
+                <div><span class="t-warn">status:</span> Conectando a ftp.media_code.uneve.edu.mx:21...</div>
+                <div><span class="t-warn">status:</span> Conexión TLS establecida de forma segura.</div>
+                <div style="margin-top: 10px; color: #a1a1aa;">Remote directory: /public_html/</div>
+                <div style="padding-left: 15px; color: #e4e4e7;">
+                    ⚡ <span class="t-success">index.html</span> (15.4 KB) <span class="t-info">[Transferencia 100%]</span><br>
+                    ⚡ <span class="t-success">style.css</span> (8.2 KB) <span class="t-info">[Transferencia 100%]</span>
+                </div>
+                <div style="margin-top: 10px;"><span class="t-success">response:</span> 226 Transfer completed successfully. File transmission closed.</div>
+            </div>
+
+            <!-- Video Didáctico -->
+           <div class="media-card-premium" style="margin-top: 40px;">
+    <h3 style="font-family: 'Poppins', sans-serif; font-size: 1.1rem; color: var(--oscuro); font-weight: 600; margin-bottom: 5px;">🎬 Video Didáctico: Uso del Administrador de Archivos y Conexión FTP</h3>
+    <p style="font-size: 0.9rem; color: #71717a; margin-bottom: 20px;">Demostración interactiva en tiempo real sobre cómo subir el proyecto multimedia y configurar los permisos de seguridad chmods.</p>
+    <div class="video-wrapper-premium" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px;">
+        <!-- Reproductor de YouTube integrado con la estética premium -->
+        <iframe 
+            src="https://www.youtube.com/embed/3GlYK4H8YbU" 
+            title="Uso del Administrador de Archivos y Conexión FTP" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+        </iframe>
+    </div>
+</div>
+        </section>
+
+        <!-- Botón de Retorno -->
+        <div style="margin-top: 60px; margin-bottom: 40px; text-align: center;">
+            <a href="ADMIN.html" class="main-btn btn-back" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; background: var(--oscuro); color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: all 0.3s;">
+                <span style="font-size: 1.1rem;">←</span> Volver al Módulo de Control General
+            </a>
+        </div>
+
+        <!-- Pie de Página Unificado -->
+        <footer class="main-footer" style="margin-top: 40px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 30px; text-align: center;">
+            <p style="font-weight: 600; color: var(--oscuro);">&copy; 2026 Rodríguez Loyo Mitzy Angela & Rios Santiago Abraham</p>
+            <p class="footer-sub" style="font-size: 0.85rem; color: #71717a; margin-top: 4px;">Ingeniería en Comunicación Multimedia • UNEVE</p>
+        </footer>
+    </main>
+
+</body>
+</html>

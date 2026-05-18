@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema V: Dominios Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            overflow-y: auto !important;
+        }
+
+        .media-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Contenedores multimedia idénticos a los módulos anteriores */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            background: var(--oscuro);
+            margin-top: 15px;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .audio-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: var(--oscuro);
+            color: var(--blanco);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .audio-wrapper audio {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Bloque de desglose anatómico de una URL estilo Fira Code */
+        .terminal-box {
+            background-color: #1A1A1A;
+            border-radius: 8px;
+            padding: 18px;
+            margin-top: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            font-family: 'Fira Code', monospace;
+            color: #E2E8F0;
+            font-size: 0.88rem;
+            border-top: 25px solid #2D2D2D;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .terminal-box::before {
+            content: '● ● ●';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            color: #EF4444;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        .url-protocol { color: #A3E635; font-weight: bold; }
+        .url-subdomain { color: #38BDF8; }
+        .url-domain { color: #ECC94B; font-weight: bold; }
+        .url-tld { color: #F43F5E; }
+        .url-path { color: #A78BFA; }
+
+        /* Retícula para tipos de dominios */
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .domain-type-card {
+            background: var(--blanco);
+            border-left: 4px solid var(--bugambilia);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+    </style>
+</head>
+<body>
+
+    <main class="main-container">
+        <!-- Barra de Navegación -->
+        <nav class="navbar" style="position: static; box-shadow: none; padding: 20px 0;">
+            <div class="logo" style="font-weight: 600; color: var(--bugambilia);">Loyo Rios</div>
+            <div class="nav-menu">
+                <a href="ADMIN.html" class="main-btn btn-gemini" style="text-decoration: none;">Volver al Panel</a>
+            </div>
+        </nav>
+
+        <!-- Encabezado Principal -->
+        <header class="main-header" style="margin-top: 20px;">
+            <h1 class="main-title" style="font-size: 2.3rem;">Módulo V: Dominios Web y Seguridad</h1>
+            <p class="subtitle">Identidad en la Red, Cifrado de Datos y Anatomía de Enlaces Públicos</p>
+        </header>
+
+        <!-- 5.1 DOMINIOS WEB Y SUBDOMINIOS -->
+        <section class="welcome-card" style="text-align: left; margin-top: 20px;">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                5.1 Dominios Web y Subdominios
+            </h2>
+            <p style="margin-top: 15px; line-height: 1.6;">
+                Un **Dominio Web** es el nombre único y exclusivo que recibe un sitio web en Internet para que un usuario pueda localizarlo sin necesidad de memorizar su dirección IP numérica. El Sistema de Nombres de Dominio (DNS) se encarga de realizar esta traducción.
+            </p>
+            
+            <div class="domain-grid">
+                <div class="domain-type-card">
+                    <h4 style="color: var(--oscuro); margin-bottom: 5px;">Dominios de Nivel Superior (gTLD)</h4>
+                    <p style="font-size: 0.9rem; color: #555;">Extensiones genéricas globales que definen el propósito del sitio. Ejemplos comunes: <code>.com</code> (comercial), <code>.org</code> (organizaciones), <code>.edu</code> (educación).</p>
+                </div>
+                <div class="domain-type-card" style="border-left-color: var(--amarillo);">
+                    <h4 style="color: var(--oscuro); margin-bottom: 5px;">Dominios Geográficos (ccTLD)</h4>
+                    <p style="font-size: 0.9rem; color: #555;">Extensiones de dos letras reservadas para países o territorios específicos. Ejemplos comunes: <code>.mx</code> (México), <code>.es</code> (España), <code>.co</code> (Colombia).</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 20px; line-height: 1.6;">
+                Un **Subdominio** es una ramificación o extensión del dominio principal creada para organizar diferentes secciones independientes dentro de un mismo sitio web, sin necesidad de adquirir un dominio nuevo (por ejemplo: `blog.tusitio.com` o `tienda.tusitio.com`).
+            </p>
+
+            <div class="media-card" style="background: rgba(0,0,0,0.02); margin-top: 25px;">
+                <h3 style="font-size: 1.1rem; color: var(--oscuro);">🎙️ Audioguía: Funcionamiento de los Servidores DNS y Delegación de Dominios</h3>
+                <div class="audio-wrapper">
+                    <span>🔊</span>
+                    <audio controls>
+                        <source src="audio/funcionamiento_dns.mp3" type="audio/mpeg">
+                        Tu navegador no soporta la reproducción de audio HTML5.
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5.2 CERTIFICADOS DE SEGURIDAD -->
+        <section class="welcome-card" style="text-align: left; margin-top: 30px;">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                5.2 Certificados de Seguridad (SSL/TLS)
+            </h2>
+            <p style="margin-top: 15px; line-height: 1.6;">
+                Un certificado **SSL/TLS** (Secure Sockets Layer / Transport Layer Security) es un título digital que autentica la identidad de un sitio web y habilita una conexión cifrada. Su función primordial es proteger los datos sensibles (credenciales, datos bancarios) en tránsito entre el navegador del usuario y el servidor web.
+            </p>
+            <p style="margin-top: 10px; line-height: 1.6;">
+                Al instalarse en el servidor web, activa el candado de seguridad en la barra de direcciones y transforma el protocolo de comunicación inseguro HTTP hacia su versión protegida: **HTTPS**.
+            </p>
+        </section>
+
+        <!-- 5.3 URL -->
+        <section class="welcome-card" style="text-align: left; margin-top: 30px;">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                5.3 URL (Localizador Uniforme de Recursos)
+            </h2>
+            <p style="margin-top: 15px; line-height: 1.6;">
+                Una **URL** (Uniform Resource Locator) es la dirección específica asignada a cada uno de los recursos disponibles en la red (páginas HTML, imágenes, documentos) para que puedan ser localizados por el navegador.
+            </p>
+
+            <h3 style="margin-top: 20px; font-size: 1.1rem; color: var(--oscuro);">🔍 Anatomía de una URL Segura</h3>
+            <div class="terminal-box">
+                <div><span class="url-protocol">https://</span><span class="url-subdomain">www.</span><span class="url-domain">uneve</span><span class="url-tld">.edu.mx</span><span class="url-path">/multimedia/index.html</span></div>
+                <div style="margin-top: 15px; border-top: 1px solid #444; padding-top: 10px; font-size: 0.85rem;">
+                    • <span class="url-protocol">https://</span> : Protocolo seguro de transferencia de datos.<br>
+                    • <span class="url-subdomain">www.</span> : Subdominio de red secundaria estándar.<br>
+                    • <span class="url-domain">uneve</span> : Nombre de dominio principal (Identidad).<br>
+                    • <span class="url-tld">.edu.mx</span> : Extensión o TLD (Institucional / México).<br>
+                    • <span class="url-path">/multimedia/index.html</span> : Ruta de acceso al archivo dentro de <code>public_html</code>.
+                </div>
+            </div>
+
+            <!-- VIDEO DIDÁCTICO DEL TEMA V -->
+            <div class="media-card" style="margin-top: 30px;">
+    <h3 style="font-size: 1.1rem; color: var(--oscuro);">🎬 Video Didáctico: Dominios, Cifrado HTTPS y URL Limpias</h3>
+    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Aprende el trayecto de una petición URL y cómo influye el certificado SSL en la seguridad del usuario final.</p>
+    <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+        <!-- Reproductor responsivo embebido de YouTube -->
+        <iframe 
+            src="https://www.youtube.com/embed/6HJAWFenYx8" 
+            title="Dominios, Cifrado HTTPS y URL Limpias" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+        </iframe>
+    </div>
+</div>
+        </section>
+
+        <!-- Navegación de Retorno -->
+        <div style="margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 30px; text-align: center;">
+            <a href="ADMIN.html" class="main-btn btn-back" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <span>←</span> Volver al Módulo de Control General
+            </a>
+        </div>
+
+        <!-- Pie de Página Unificado -->
+        <footer class="main-footer">
+            <p>&copy; 2026 Rodríguez Loyo Mitzy Angela & Rios Santiago Abraham</p>
+            <p style="font-size: 0.8rem; margin-top: 5px;">Ingeniería en Comunicación Multimedia</p>
+        </footer>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 1: Clasificación de los Sistemas Operativos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ajuste específico inline para contenido académico extenso */
+        body {
+            overflow-y: auto !important; /* Permite el desplazamiento vertical natural */
+        }
+        
+        /* Contenedores multimedia adaptativos y responsivos */
+        .media-wrapper {
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            background: #000;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+        }
+
+        .video-container video, .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .audio-container {
+            background: var(--oscuro);
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .audio-container audio {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-caption {
+            background: var(--oscuro);
+            color: var(--blanco);
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 5px;
+        }
+
+        /* Elemento de Animación Interactiva */
+        .timeline-interactive {
+            background: var(--blanco);
+            border-left: 4px solid var(--bugambilia);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            animation: pulseShadow 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseShadow {
+            0% { box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+            50% { box-shadow: 0 4px 20px rgba(224, 30, 90, 0.2); }
+            100% { box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        }
+
+        .os-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .bg-unix { background-color: #4A5568; }
+        .bg-linux { background-color: #ECC94B; color: #000 !important; }
+        .bg-windows { background-color: #3182CE; }
+        .bg-macos { background-color: #718096; }
+    </style>
+</head>
+<body>
+
+    <main class="main-container">
+        <nav class="navbar" style="position: static; box-shadow: none; padding: 20px 0;">
+            <div class="logo" style="font-weight: 600; color: var(--bugambilia);">Loyo Rios</div>
+            <div class="nav-menu">
+                <a href="admin.html" class="main-btn btn-gemini" style="text-decoration: none;">Panel Central</a>
+            </div>
+        </nav>
+
+        <header class="main-header" style="margin-top: 20px;">
+            <h1 class="main-title" style="font-size: 2.5rem;">Clasificación de los Sistemas Operativos</h1>
+            <p class="subtitle">Tema 1: Arquitectura Multiusuario e Infraestructura</p>
+        </header>
+
+        <section class="welcome-card" style="text-align: left;">
+            <h2>Introducción a la Clasificación</h2>
+            <p>Los sistemas operativos se clasifican según sus capacidades de administración de recursos, tareas y usuarios. En el ámbito corporativo y de servidores, la infraestructura se sostiene primordialmente sobre arquitecturas de naturaleza <strong>Multiusuario</strong>, diseñadas para procesar de forma segura y concurrente las peticiones de cientos de credenciales independientes.</p>
+        </section>
+
+        <section style="margin-top: 40px;" class="welcome-card">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                1.1 Historia de los Sistemas Operativos Multiusuario
+            </h2>
+            <p style="margin-top: 15px;">Un sistema operativo multiusuario es aquel que permite proveer servicio y procesamiento de manera simultánea a múltiples usuarios, compartiendo de forma eficiente los mismos recursos de hardware (CPU, memoria, almacenamiento).</p>
+
+            <div class="timeline-interactive">
+                <h4 style="color: var(--oscuro); margin-bottom: 5px;">💡 Hito de Evolución Tecnológica</h4>
+                <p style="font-size: 0.95rem;">La computación evolucionó desde el procesamiento por lotes (Batch) de un solo operador hacia el <strong>Tiempo Compartido (Time-Sharing)</strong>, marcando el origen de las telecomunicaciones y servidores modernos.</p>
+            </div>
+
+            <h3 style="margin-top: 30px; font-size: 1.2rem;">🎙️ Audioguía: Conceptos del Tiempo Compartido</h3>
+            <div class="audio-container">
+                <span style="font-size: 1.5rem;">🔊</span>
+                <audio controls>
+                    <source src="audio/historia_multiusuario.mp3" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio HTML5.
+                </audio>
+            </div>
+
+            <div class="topics-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 30px;">
+                
+                <div class="topic-btn" style="cursor: default; transform: none;">
+                    <div class="btn-content" style="align-items: flex-start;">
+                        <div class="btn-text" style="text-align: left;">
+                            <span class="os-badge bg-unix">UNIX (1969)</span>
+                            <h3 style="margin-bottom: 10px;">El Origen de la Estructura</h3>
+                            <p style="font-size: 0.9rem; line-height: 1.5;">Desarrollado originalmente en los Laboratorios Bell de AT&T por Ken Thompson y Dennis Ritchie. UNIX introdujo la base conceptual del cómputo multiusuario moderno, el sistema de archivos jerárquico y el intérprete de comandos (Shell).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-btn" style="cursor: default; transform: none;">
+                    <div class="btn-content" style="align-items: flex-start;">
+                        <div class="btn-text" style="text-align: left;">
+                            <span class="os-badge bg-linux">LINUX (1991)</span>
+                            <h3 style="margin-bottom: 10px;">La Revolución Open Source</h3>
+                            <p style="font-size: 0.9rem; line-height: 1.5;">Creado por Linus Torvalds como un núcleo libre basado en la arquitectura de MINIX (derivado de UNIX). Al combinarse con las herramientas GNU, dio vida al ecosistema de servidores más utilizado en el mundo por su robustez, seguridad y modularidad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-btn" style="cursor: default; transform: none;">
+                    <div class="btn-content" style="align-items: flex-start;">
+                        <div class="btn-text" style="text-align: left;">
+                            <span class="os-badge bg-windows">WINDOWS NT (1993)</span>
+                            <h3 style="margin-bottom: 10px;">La Infraestructura Empresarial</h3>
+                            <p style="font-size: 0.9rem; line-height: 1.5;">Microsoft migró del monousuario MS-DOS introduciendo la arquitectura NT. Con versiones como Windows NT Server (y posteriormente Windows Server), se consolidó en ambientes corporativos gracias a sus servicios de directorio centralizados (Active Directory).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-btn" style="cursor: default; transform: none;">
+                    <div class="btn-content" style="align-items: flex-start;">
+                        <div class="btn-text" style="text-align: left;">
+                            <span class="os-badge bg-macos">MAC OS X / macOS</span>
+                            <h3 style="margin-bottom: 10px;">El Núcleo Certificado</h3>
+                            <p style="font-size: 0.9rem; line-height: 1.5;">La evolución moderna del sistema operativo de Apple se construyó sobre un núcleo llamado <strong>Darwin</strong>, basado en BSD (un clon directo de UNIX). Esto combina una interfaz gráfica intuitiva con la estabilidad técnica y multiusuario del estándar UNIX.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 style="margin-top: 40px; font-size: 1.2rem; text-align: left;">📸 Galería: Líderes y Pioneros de la Infraestructura</h3>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/originals/aa/a6/a7/aaa6a72025c7fd75dcb89da7112173ff.jpg" alt="Creadores de Unix">
+                    <div class="image-caption">Ken Thompson y Dennis Ritchie</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/originals/ed/d2/d3/edd2d36a0482f8e1ce53111bbd5be5c5.jpg" alt="Linus Torvalds">
+                    <div class="image-caption">Linus Torvalds - Kernel Linux</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.eZzWfPzj9AnMM09I9gqKWgHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Evolución de Windows NT">
+                    <div class="image-caption">Interfaz Clásica de Windows NT</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.sstatic.net/0kcKW7TC.jpg" alt="Estructura BSD Darwin">
+                    <div class="image-caption">Arquitectura Darwin de macOS</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px; font-size: 1.2rem; text-align: left;">🎬 Video Didáctico: La evolución de los Sistemas Operativos</h3>
+<div class="media-wrapper">
+    <div class="video-container">
+        <!-- Reemplazamos <video> por <iframe> configurado para comportamiento responsivo -->
+        <iframe 
+            src="https://www.youtube.com/embed/fPQCfy6FNE8" 
+            title="La evolución de los Sistemas Operativos" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;">
+        </iframe>
+    </div>
+</div>
+        </section>
+
+        <div style="margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 30px; text-align: center;">
+            <a href="admin.html" class="main-btn btn-back" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <span>←</span> Volver al Panel Control de Temas
+            </a>
+        </div>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 Rodríguez Loyo Mitzy Angela & Rios Santiago Abraham</p>
+            <p style="font-size: 0.8rem; margin-top: 5px;">Ingeniería en Comunicación Multimedia</p>
+        </footer>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema II: Clasificación de los Servidores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            overflow-y: auto !important;
+        }
+
+        .media-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Contenedores multimedia */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            background: var(--oscuro);
+            margin-top: 15px;
+        }
+
+        .video-wrapper video, .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .audio-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: var(--oscuro);
+            color: var(--blanco);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .audio-wrapper audio {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Galerías */
+        .hardware-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .hw-card {
+            background: var(--blanco);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+        }
+
+        .hw-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hw-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hw-info {
+            padding: 15px;
+        }
+
+        .hw-info h4 {
+            color: var(--oscuro);
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .hw-info p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Línea de tiempo interactiva */
+        .step-timeline {
+            position: relative;
+            border-left: 3px solid var(--bugambilia);
+            margin: 20px 0 20px 10px;
+            padding-left: 20px;
+        }
+
+        .step-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .step-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 4px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--amarillo);
+            border: 2px solid var(--bugambilia);
+        }
+
+        .step-number {
+            font-weight: 700;
+            color: var(--bugambilia);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            color: var(--oscuro);
+            margin-bottom: 5px;
+        }
+
+        /* Tablas */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .tech-table th {
+            background-color: var(--oscuro);
+            color: var(--blanco);
+            text-align: left;
+            padding: 12px;
+            font-weight: 600;
+        }
+
+        .tech-table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .tech-table tr:nth-child(even) {
+            background-color: rgba(0,0,0,0.02);
+        }
+
+        .badge-so {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .badge-linux { background-color: #ECC94B; color: #000; }
+        .badge-windows { background-color: #3182CE; }
+
+        /* --- NUEVOS ESTILOS PARA 2.5 Y 2.6 --- */
+        /* Consola de comandos simulada */
+        .terminal-box {
+            background-color: #1A1A1A;
+            border-radius: 8px;
+            padding: 18px;
+            margin-top: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            font-family: 'Fira Code', monospace;
+            color: #A3E635; /* Verde terminal */
+            font-size: 0.88rem;
+            border-top: 25px solid #2D2D2D;
+            position: relative;
+        }
+
+        .terminal-box::before {
+            content: '● ● ●';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            color: #EF4444;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        .terminal-user { color: #38BDF8; } /* Azul para usuario */
+        .terminal-cmd { color: #FFFFFF; }  /* Blanco para el comando ejecutado */
+        .terminal-output { color: #E2E8F0; display: block; margin: 4px 0 12px 15px; line-height: 1.4; }
+
+        .steps-card {
+            background: #fff;
+            border-left: 4px solid var(--amarillo);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+    </style>
+</head>
+<body>
+
+    <main class="main-container">
+        <nav class="navbar" style="position: static; box-shadow: none; padding: 20px 0;">
+            <div class="logo" style="font-weight: 600; color: var(--bugambilia);">Loyo Rios</div>
+            <div class="nav-menu">
+                <a href="ADMIN.html" class="main-btn btn-gemini" style="text-decoration: none;">Volver al Panel</a>
+            </div>
+        </nav>
+
+        <header class="main-header" style="margin-top: 20px;">
+            <h1 class="main-title" style="font-size: 2.3rem;">Módulo II: Clasificación de los Servidores</h1>
+            <p class="subtitle">Infraestructura, Virtualización y Control por Consola</p>
+        </header>
+
+        <section class="welcome-card" style="text-align: left; margin-top: 20px;">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                2.1 Características Principales de un Servidor
+            </h2>
+            <p style="margin-top: 15px; line-height: 1.6;">
+                Un servidor es una computadora de altas prestaciones optimizada para proveer recursos, datos, servicios o programas a otras computadoras conocidas como clientes a través de una red. Sus características fundamentales son:
+            </p>
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.6;">
+                <li><strong>Alta Disponibilidad:</strong> Operación continua (24/7/365) mediante hardware tolerante a fallos.</li>
+                <li><strong>Escalabilidad:</strong> Aptitud para incrementar sus capacidades físicas (RAM, CPU) sin perder rendimiento.</li>
+                <li><strong>Procesamiento Concurrente:</strong> Habilidad para responder simultáneamente miles de solicitudes de clientes de forma aislada y segura.</li>
+            </ul>
+
+            <div class="media-card" style="background: rgba(0,0,0,0.02); margin-top: 25px;">
+                <h3 style="font-size: 1.1rem; color: var(--oscuro);">🎙️ Audioguía: Arquitectura de Tolerancia a Fallos</h3>
+                <div class="audio-wrapper">
+                    <span>🔊</span>
+                    <audio controls>
+                        <source src="audio/caracteristicas_servidores.mp3" type="audio/mpeg">
+                        Tu navegador no soporta la reproducción de audio HTML5.
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <section class="welcome-card" style="text-align: left; margin-top: 30px;">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                2.2 Información Principal del Equipo (Software y Hardware)
+            </h2>
+            <div class="hardware-grid">
+                <div class="hw-card">
+                    <img src="https://th.bing.com/th/id/R.5265c9afc945dbdc7770b574253811a4?rik=LQnNWmusNdjSNg&pid=ImgRaw&r=0" alt="Procesadores Xeon / Epyc">
+                    <div class="hw-info">
+                        <h4>Procesamiento (Hardware)</h4>
+                        <p>Uso de CPUs multinúcleo empresariales (Intel Xeon / AMD EPYC) que soportan altas cargas operativas y memoria ECC RAM.</p>
+                    </div>
+                </div>
+                <div class="hw-card">
+                    <img src="https://www.trendtic.cl/wp-content/uploads/2022/04/Pure-Storage.jpg" alt="Almacenamiento RAID">
+                    <div class="hw-info">
+                        <h4>Almacenamiento Concurrente</h4>
+                        <p>Arreglos de discos NVMe o SAS configurados en RAID redundantes que garantizan la integridad de los datos ante fallos físicos.</p>
+                    </div>
+                </div>
+                <div class="hw-card">
+                    <img src="https://th.bing.com/th/id/R.a3d974299cca7d342384444593bf15d3?rik=H4GED842QXG0WA&pid=ImgRaw&r=0" alt="Sistemas Operativos de Servidor">
+                    <div class="hw-info">
+                        <h4>Kernel Corporativo (Software)</h4>
+                        <p>Sistemas robustos desprovistos de interfaces pesadas para priorizar hilos de ejecución dedicados (Ubuntu Server / Windows Server).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="welcome-card" style="text-align: left; margin-top: 30px;">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                2.3 Preparación de la Máquina Virtual para la Instalación
+            </h2>
+            <table class="tech-table">
+                <thead>
+                    <tr>
+                        <th>Recurso de Hardware</th>
+                        <th>Asignación Linux Server</th>
+                        <th>Asignación Windows Server</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Memoria RAM Mínima</strong></td>
+                        <td>1024 MB (1 GB)</td>
+                        <td>2048 MB (2 GB)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Procesador (vCPU)</strong></td>
+                        <td>1 vCPU</td>
+                        <td>2 vCPUs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Disco Duro Virtual</strong></td>
+                        <td>20 GB (Dinámico)</td>
+                        <td>40 GB (Dinámico)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="welcome-card" style="text-align: left; margin-top: 30px;">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                2.4 Instalación de Linux y de Windows
+            </h2>
+            <div class="step-timeline">
+                <div class="step-item">
+                    <span class="step-number">Fase 01</span>
+                    <h3 class="step-title">Montaje de la Imagen ISO</h3>
+                    <p style="font-size: 0.9rem; color: #555;">Se indexa la imagen descargada del sistema operativo (<span class="badge-so badge-linux">Ubuntu .iso</span> o <span class="badge-so badge-windows">Windows Server .iso</span>) en el hipervisor.</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">Fase 02</span>
+                    <h3 class="step-title">Configuración del Idioma y Particionado</h3>
+                    <p style="font-size: 0.9rem; color: #555;">En Linux se prefiere un particionado ext4 sobre LVM. En Windows se formatean los volumenes bajo NTFS primario.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="welcome-card" style="text-align: left; margin-top: 30px;">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                2.5 Primeros Pasos en el Manejo de Linux y de Windows
+            </h2>
+            <p style="margin-top: 15px; line-height: 1.6;">
+                Una vez completada la instalación, la fase de inicialización técnica y post-instalación requiere asegurar los canales de comunicación y actualizar los repositorios de software centrales:
+            </p>
+            
+            <div class="steps-card">
+                <h4 style="color: var(--oscuro); margin-bottom: 5px;"><span class="badge-so badge-linux">En Linux Server</span></h4>
+                <p style="font-size: 0.9rem; color: #555;">El primer inicio es puramente en modo texto. La acción obligatoria consiste en actualizar los índices de paquetes con los servidores espejo globales e iniciar el demonio de SSH para la administración remota segura.</p>
+            </div>
+
+            <div class="steps-card" style="border-left-color: var(--bugambilia);">
+                <h4 style="color: var(--oscuro); margin-bottom: 5px;"><span class="badge-so badge-windows">En Windows Server</span></h4>
+                <p style="font-size: 0.9rem; color: #555;">El sistema despliega el cuadro de control <strong>"Administrador del Servidor"</strong>. Los primeros pasos implican asignar una dirección IP estática fija a la tarjeta de red interna, cambiar el nombre genérico del equipo y habilitar el Escritorio Remoto (RDP).</p>
+            </div>
+        </section>
+
+        <section class="welcome-card" style="text-align: left; margin-top: 30px;">
+            <h2 style="color: var(--bugambilia); border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px;">
+                2.6 Comandos Básicos de Consola (CLI)
+            </h2>
+            <p style="margin-top: 15px;">
+                La administración interactiva multimedia de los servidores se realiza mediante interfaces de línea de comandos (Bash en Linux y PowerShell / CMD en Windows). Aquí se detallan los comandos de control esenciales:
+            </p>
+
+            <h3 style="margin-top: 20px; font-size: 1.1rem; color: var(--oscuro);">💻 Consola de Referencia Linux (Bash Terminal)</h3>
+            <div class="terminal-box">
+                <div><span class="terminal-user">root@servidor:~#</span> <span class="terminal-cmd">pwd</span></div>
+                <span class="terminal-output">/root <span style="color:#666;">(Muestra el directorio de trabajo actual)</span></span>
+
+                <div><span class="terminal-user">root@servidor:~#</span> <span class="terminal-cmd">ls -lh</span></div>
+                <span class="terminal-output">drwxr-xr-x  2 root root 4.0K May 17 16:30 public_html <span style="color:#666;">(Lista archivos con permisos)</span></span>
+
+                <div><span class="terminal-user">root@servidor:~#</span> <span class="terminal-cmd">sudo apt update && sudo apt upgrade -y</span></div>
+                <span class="terminal-output">Leyendo lista de paquetes... Hecho. <span style="color:#666;">(Actualiza el software del servidor)</span></span>
+
+                <div><span class="terminal-user">root@servidor:~#</span> <span class="terminal-cmd">ifconfig</span></div>
+                <span class="terminal-output">inet 192.168.1.100  netmask 255.255.255.0 <span style="color:#666;">(Muestra la dirección IP del nodo)</span></span>
+            </div>
+
+            <h3 style="margin-top: 25px; font-size: 1.1rem; color: var(--oscuro);">💻 Consola de Referencia Windows (PowerShell)</h3>
+            <div class="terminal-box" style="color: #38BDF8; border-top-color: #1E3A8A;">
+                <div><span style="color:#FFF;">PS C:\Users\Administrator&gt;</span> <span class="terminal-cmd" style="color:#FFF;">Get-Location</span></div>
+                <span class="terminal-output">Path: C:\Users\Administrator <span style="color:#888;">(Equivalente a pwd en Linux)</span></span>
+
+                <div><span style="color:#FFF;">PS C:\Users\Administrator&gt;</span> <span class="terminal-cmd" style="color:#FFF;">Get-ChildItem</span></div>
+                <span class="terminal-output">Directory: C:\Users\Administrator (Muestra el árbol de carpetas)</span>
+
+                <div><span style="color:#FFF;">PS C:\Users\Administrator&gt;</span> <span class="terminal-cmd" style="color:#FFF;">Test-Connection -ComputerName 8.8.8.8</span></div>
+                <span class="terminal-output">Source Destination IPStatus Time(ms)<br>Server 8.8.8.8     Success  12 <span style="color:#888;">(Verifica conectividad externa de red)</span></span>
+            </div>
+
+            <div class="media-card" style="margin-top: 30px;">
+    <h3 style="font-size: 1.1rem; color: var(--oscuro);">🎬 Video Didáctico: Interfaz de Consola y Comandos de Servidor</h3>
+    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Demostración interactiva en tiempo real sobre cómo navegar y operar terminales seguras.</p>
+    <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+        <!-- Incorporación del reproductor de YouTube responsivo -->
+        <iframe 
+            src="https://www.youtube.com/embed/1YxHXBsVNGQ" 
+            title="Interfaz de Consola y Comandos de Servidor" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+        </iframe>
+    </div>
+</div>
+        </section>
+
+        <div style="margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 30px; text-align: center;">
+            <a href="ADMIN.html" class="main-btn btn-back" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <span>←</span> Volver al Módulo de Control General
+            </a>
+        </div>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 Rodríguez Loyo Mitzy Angela & Rios Santiago Abraham</p>
+            <p style="font-size: 0.8rem; margin-top: 5px;">Ingeniería en Comunicación Multimedia</p>
+        </footer>
+    </main>
+
+</body>
+</html>
