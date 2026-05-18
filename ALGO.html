@@ -51,8 +51,14 @@
     <nav class="sticky top-0 z-50 bg-white shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Título del Proyecto -->
-                <div class="flex-shrink-0">
+                <!-- Título del Proyecto y Botón Regresar -->
+                <div class="flex items-center space-x-4 flex-shrink-0">
+                    <a href="index.html" class="inline-flex items-center px-3 py-1.5 border border-gray-300 text-xs font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition ease-in-out duration-150 shadow-sm">
+                        <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                        Inicio
+                    </a>
                     <h1 class="text-xl font-extrabold theme-1-color">Proyecto Final</h1>
                 </div>
                 <!-- Menú Principal (Enlaces) -->
@@ -286,9 +292,18 @@
             </div>
         </section>
 
-        <!-- Botón de regreso al inicio -->
-        <div class="text-center mt-12">
-            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+        <!-- Bloque de Botones de Navegación Inferiores -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+            <!-- Botón para regresar al index.html -->
+            <a href="index.html" class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-full shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out w-full sm:w-auto justify-center">
+                <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z"/>
+                </svg>
+                Menú Principal
+            </a>
+            
+            <!-- Botón de regreso al inicio de la página -->
+            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out w-full sm:w-auto justify-center">
                 Volver al Inicio
             </a>
         </div>
