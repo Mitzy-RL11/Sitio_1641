@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.6 Estándares y Códecs (MPEG, H.26x)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; }
+        .tech-font { font-family: 'Roboto Mono', monospace; }
+        .theme-color { color: #8b5cf6; } /* Violeta Amatista para Video */
+        .border-theme { border-color: #8b5cf6; }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8 flex items-center justify-center">
+
+    <div class="w-full max-w-5xl bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden">
+        
+        <header class="bg-slate-900 text-white p-8 border-b-4 border-theme">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                    <h1 class="text-3xl md:text-4xl tech-font font-bold theme-color">5.6 ESTÁNDARES Y CÓDECS (MPEG, H.26X)</h1>
+                    <p class="text-slate-400 mt-2 tech-font text-sm">Modulo: Compresión de Video // Status: Implementación</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex flex-col lg:flex-row">
+            
+            <div class="w-full lg:w-full p-8 md:p-12 space-y-6">
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    La compresión de video se rige por estándares desarrollados por grupos como MPEG (Moving Picture Experts Group) y la UIT (Unión Internacional de Telecomunicaciones), que definen los algoritmos utilizados por los códecs.
+                </p>
+
+                <h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">Códecs Basados en Bloques de Movimiento</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                    <!-- H.264/AVC -->
+                    <div class="p-4 bg-violet-50 rounded-lg border border-violet-300">
+                        <h3 class="tech-font font-bold text-violet-600">H.264 / AVC (Advanced Video Coding)</h3>
+                        <p class="text-sm text-slate-700 mt-1">El estándar de facto para la distribución HD (Blu-ray, YouTube, Netflix). Es mucho más eficiente que MPEG-2, utilizando algoritmos de predicción de movimiento mejorados.</p>
+                    </div>
+                    <!-- H.265/HEVC -->
+                    <div class="p-4 bg-violet-50 rounded-lg border border-violet-300">
+                        <h3 class="tech-font font-bold text-violet-600">H.265 / HEVC (High Efficiency Video Coding)</h3>
+                        <p class="text-sm text-slate-700 mt-1">Sucesor de H.264. Ofrece aproximadamente el doble de relación de compresión para la misma calidad. Es clave para la distribución de video 4K y 8K.</p>
+                    </div>
+                    <!-- MPEG-2 -->
+                    <div class="p-4 bg-violet-50 rounded-lg border border-violet-300">
+                        <h3 class="tech-font font-bold text-violet-600">MPEG-2</h3>
+                        <p class="text-sm text-slate-700 mt-1">Estándar antiguo, pero que definió las bases de la compresión. Utilizado históricamente en DVDs y transmisiones de TV digital.</p>
+                    </div>
+                    <!-- AV1 -->
+                    <div class="p-4 bg-violet-50 rounded-lg border border-violet-300">
+                        <h3 class="tech-font font-bold text-violet-600">AV1 (AOMedia Video 1)</h3>
+                        <p class="text-sm text-slate-700 mt-1">Un estándar de código abierto libre de regalías, diseñado para superar a H.265, especialmente en streaming. Adoptado por Google, Netflix y Amazon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-slate-50 p-6 border-t border-slate-200 text-center">
+            <a href="ALGO.html" class="inline-block px-6 py-2 bg-slate-800 text-white rounded hover:bg-slate-700 transition tech-font text-sm">
+                &lt; VOLVER AL ÍNDICE /&gt;
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

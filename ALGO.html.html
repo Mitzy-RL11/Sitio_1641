@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final: Medios y Compresión de Datos</title>
+    <!-- Incluye Tailwind CSS para un diseño limpio y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos personalizados para la fuente y el scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* Fondo claro */
+        }
+        /* Estilo para los enlaces del menú al hacer scroll */
+        .nav-link {
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #1e40af; /* Azul oscuro en hover */
+        }
+        /* Estilo para las tarjetas de subtemas */
+        .topic-link {
+            display: block;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .topic-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+            /* Usar un color de hover genérico más sutil */
+            background-color: #eef2ff; 
+        }
+        /* Colores Temáticos */
+        .theme-1-color { color: #4f46e5; } /* Indigo */
+        .theme-2-color { color: #2563eb; } /* Blue */
+        .theme-3-color { color: #059669; } /* Green */
+        .theme-4-color { color: #d97706; } /* Yellow/Amber */
+        .theme-5-color { color: #8b5cf6; } /* Violeta Amatista (Video) */
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navbar/Menú de Navegación Fijo -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Título del Proyecto -->
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-extrabold theme-1-color">Proyecto Final</h1>
+                </div>
+                <!-- Menú Principal (Enlaces) -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#antecedentes" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">1. Antecedentes</a>
+                        <a href="#algoritmos" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">2. Algoritmos</a>
+                        <a href="#imagenes" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">3. Imágenes</a>
+                        <a href="#audio" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">4. Audio</a>
+                        <a href="#video" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700">5. Video</a>
+                    </div>
+                </div>
+                <!-- Botón de Menú Móvil (placeholder) -->
+                <div class="md:hidden">
+                    <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-4xl mx-auto py-12 px-6 lg:px-8">
+        
+        <!-- Sección de Bienvenida/Introducción -->
+        <header class="text-center mb-16 p-8 bg-white rounded-xl shadow-lg">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Proyecto Final</h2>
+            <p class="text-xl text-gray-600">Explora las secciones sobre Medios de Comunicación y Compresión de Datos.</p>
+        </header>
+
+        <!-- 1. ANTECEDENTES DE LOS MEDIOS DE COMUNICACIÓN -->
+        <section id="antecedentes" class="mb-16 p-8 bg-white rounded-xl shadow-lg border-l-4 border-indigo-500">
+            <h2 class="text-3xl font-bold theme-1-color mb-6 border-b pb-2">1. ANTECEDENTES DE LOS MEDIOS DE COMUNICACIÓN</h2>
+            
+            <div class="space-y-4 text-lg">
+                <!-- Tema 1.1 Prensa -->
+                <a href="1.1 Prensa.html" class="topic-link bg-gray-50 hover:bg-indigo-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">1.1 Prensa</span>
+                    <span class="text-sm theme-1-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                
+                <!-- Tema 1.2 Cine -->
+                <a href="1.2 Cine.html" class="topic-link bg-gray-50 hover:bg-indigo-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">1.2 Cine</span>
+                    <span class="text-sm theme-1-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                
+                <!-- Tema 1.3 Radio -->
+                <a href="1.3 Radio.html" class="topic-link bg-gray-50 hover:bg-indigo-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">1.3 Radio</span>
+                    <span class="text-sm theme-1-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                
+                <!-- Tema 1.4 Televisión -->
+                <a href="1.4 Televisión.html" class="topic-link bg-gray-50 hover:bg-indigo-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">1.4 Televisión</span>
+                    <span class="text-sm theme-1-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                
+                <!-- Tema 1.5 Redes de computadoras -->
+                <a href="1.5 Redes de Computadoras.html" class="topic-link bg-gray-50 hover:bg-indigo-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">1.5 Redes de computadoras</span>
+                    <span class="text-sm theme-1-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. ALGORITMOS DE COMPRESIÓN -->
+        <section id="algoritmos" class="mb-16 p-8 bg-white rounded-xl shadow-lg border-l-4 border-blue-500">
+            <h2 class="text-3xl font-bold theme-2-color mb-6 border-b pb-2">2. ÁLGORITMOS DE COMPRESIÓN</h2>
+            <div class="space-y-4 text-lg">
+                <a href="2.1 Compresión de datos.html" class="topic-link bg-gray-50 hover:bg-blue-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">2.1 Compresión de datos: Definición y necesidad</span>
+                    <span class="text-sm theme-2-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="2.2 Fundamentos de Compresión.html" class="topic-link bg-gray-50 hover:bg-blue-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">2.2 ¿Qué es y cómo es posible?</span>
+                    <span class="text-sm theme-2-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="2.3 Técnicas o Tipos.html" class="topic-link bg-gray-50 hover:bg-blue-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">2.3 Técnicas o tipos de compresión</span>
+                    <span class="text-sm theme-2-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="2.4 Sin Pérdida.html" class="topic-link bg-gray-50 hover:bg-blue-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">2.4 Sin pérdida o lossless: Algoritmos (ej: Huffman, LZW)</span>
+                    <span class="text-sm theme-2-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="2.5 Con Pérdida.html" class="topic-link bg-gray-50 hover:bg-blue-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">2.5 Con pérdida o lossy: Principios (ej: DCT, perceptuales)</span>
+                    <span class="text-sm theme-2-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. COMPRESIÓN DE IMÁGENES -->
+        <section id="imagenes" class="mb-16 p-8 bg-white rounded-xl shadow-lg border-l-4 border-green-500">
+            <h2 class="text-3xl font-bold theme-3-color mb-6 border-b pb-2">3. COMPRESIÓN DE IMÁGENES</h2>
+            <div class="space-y-4 text-lg">
+                <a href="3.1 Imágenes Digitales.html" class="topic-link bg-gray-50 hover:bg-green-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">3.1 Imágenes digitales: Concepto fundamental</span>
+                    <span class="text-sm theme-3-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="3.2 Propiedades de la Imagen Digital.html" class="topic-link bg-gray-50 hover:bg-green-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">3.2 Propiedades de la imagen digital: Resolución, profundidad de color, etc.</span>
+                    <span class="text-sm theme-3-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="3.3 Píxel.html" class="topic-link bg-gray-50 hover:bg-green-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">3.3 Pixel: La unidad mínima de la imagen</span>
+                    <span class="text-sm theme-3-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="3.4 Creación de Imágenes.html" class="topic-link bg-gray-50 hover:bg-green-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">3.4 ¿Cómo se crean las imágenes digitales?: Métodos de captura y generación</span>
+                    <span class="text-sm theme-3-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="3.5 Escáner.html" class="topic-link bg-gray-50 hover:bg-green-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">3.5 Escaner: Funcionamiento y digitalización</span>
+                    <span class="text-sm theme-3-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="3.6 Fotografía Digital.html" class="topic-link bg-gray-50 hover:bg-green-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">3.6 Fotografía: Cámaras digitales y sensores</span>
+                    <span class="text-sm theme-3-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="3.7 Creación en Programas.html" class="topic-link bg-gray-50 hover:bg-green-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">3.7 Creación directa en programas de gráficos</span>
+                    <span class="text-sm theme-3-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="3.8 Formatos de Imagen.html" class="topic-link bg-gray-50 hover:bg-green-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">3.8 Formatos de imagen: Análisis de JPG, PNG, GIF, BMP, etc.</span>
+                    <span class="text-sm theme-3-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 4. COMPRESIÓN DE AUDIO -->
+        <section id="audio" class="mb-16 p-8 bg-white rounded-xl shadow-lg border-l-4 border-yellow-500">
+            <h2 class="text-3xl font-bold theme-4-color mb-6 border-b pb-2">4. COMPRESIÓN DE AUDIO</h2>
+            <div class="space-y-4 text-lg">
+                <a href="4.1 El Sonido.html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.1 El sonido: Naturaleza y características</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.2 Acústica.html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.2 Acústica: Propagación y percepción física</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.3 El Sistema Auditivo Humano.html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.3 El sistema auditivo humano: Fisiología y psicoacústica</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.4 Audio Digital.html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.4 Audio digital: Conversión A/D y muestreo</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.5 Modulación de Pulsos Codificados (PCM).html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.5 Modulación de pulsos codificados (PCM): El estándar sin comprimir</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.6 Amplitud Modulada (AM).html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.6 Amplitud modulada (AM): Base de transmisión analógica</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.7 Frecuencia Modulada (FM).html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.7 Frecuencia modulada (FM): Base de transmisión analógica de alta fidelidad</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.8 Terminología.html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.8 Terminología: Bitrate, sample rate, etc.</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.9 Códec.html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.9 Codificador/decodificador o códec: Función y tipos</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.10 Formatos de Audio.html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.10 Formatos de audio: Tipos y usos (MP3, AAC, WAV, FLAC)</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.11 Sin Pérdida (Lossless).html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.11 Sin perdida: Características (FLAC, ALAC)</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.12 Con Pérdida (Lossy).html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.12 Con perdida: Características (MP3, AAC)</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.13 Qué es el Streaming.html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.13 ¿Qué es el streaming?: Funcionamiento y protocolos</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="4.14 Plataformas de Música en Streaming.html" class="topic-link bg-gray-50 hover:bg-yellow-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">4.14 Plataformas de música en streaming: Ejemplos y modelos de negocio</span>
+                    <span class="text-sm theme-4-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 5. COMPRESIÓN DE VIDEO -->
+        <section id="video" class="mb-16 p-8 bg-white rounded-xl shadow-lg border-l-4 border-purple-500">
+            <h2 class="text-3xl font-bold theme-5-color mb-6 border-b pb-2">5. COMPRESIÓN DE VIDEO</h2>
+            <div class="space-y-4 text-lg">
+                <!-- NOTA: El temario original tenía 5.1 y 5.2 como Video Analógico/CRT, 
+                     pero dado que hemos estado generando contenido para Compresión de Video, 
+                     uso los títulos y enlaces de los archivos generados. -->
+                <a href="5.1 Video Digital.html" class="topic-link bg-gray-50 hover:bg-purple-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">5.1 Video Digital</span>
+                    <span class="text-sm theme-5-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="5.2 Profundidad de Color y Espacio de Color.html" class="topic-link bg-gray-50 hover:bg-purple-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">5.2 Profundidad de Color y Espacio de Color</span>
+                    <span class="text-sm theme-5-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="5.3 Muestreo de Crominancia.html" class="topic-link bg-gray-50 hover:bg-purple-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">5.3 Muestreo de Crominancia (Submuestreo de Chroma)</span>
+                    <span class="text-sm theme-5-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="5.4 Video sin compresión (Raw).html" class="topic-link bg-gray-50 hover:bg-purple-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">5.4 Video sin compresión (Raw)</span>
+                    <span class="text-sm theme-5-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="5.5 Tipos de Compresión.html" class="topic-link bg-gray-50 hover:bg-purple-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">5.5 Tipos de Compresión: Intra y Inter Frame</span>
+                    <span class="text-sm theme-5-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+                <a href="5.6 Estándares y Códecs.html" class="topic-link bg-gray-50 hover:bg-purple-50 flex justify-between items-center border border-gray-100">
+                    <span class="font-semibold text-gray-800">5.6 Estándares y Códecs (MPEG, H.26x)</span>
+                    <span class="text-sm theme-5-color font-medium">Ver Detalle &rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Botón de regreso al inicio -->
+        <div class="text-center mt-12">
+            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+                Volver al Inicio
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12 p-6 text-center">
+        <p class="text-sm">&copy; 2025 Proyecto Final. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

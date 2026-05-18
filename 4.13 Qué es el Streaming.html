@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.13 ¿Qué es el Streaming?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; }
+        .tech-font { font-family: 'Roboto Mono', monospace; }
+        .theme-color { color: #3b82f6; } /* Azul para Streaming */
+        .border-theme { border-color: #3b82f6; }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8 flex items-center justify-center">
+
+    <div class="w-full max-w-5xl bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden">
+        
+        <header class="bg-slate-900 text-white p-8 border-b-4 border-theme">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                    <h1 class="text-3xl md:text-4xl tech-font font-bold theme-color">4.13 ¿QUÉ ES EL STREAMING?</h1>
+                    <p class="text-slate-400 mt-2 tech-font text-sm">Modulo: Compresión de Audio // Status: Transmisión</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex flex-col lg:flex-row">
+            
+            <div class="w-full lg:w-3/5 p-8 md:p-12 space-y-6">
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    El <span class="font-bold theme-color">Streaming</span> (transmisión en flujo) es una tecnología que permite la visualización o audición de contenido multimedia a través de una red (generalmente Internet) de forma continua, sin necesidad de descargar el archivo completo antes de empezar.
+                </p>
+                
+                <h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">Funcionamiento</h3>
+                <p class="text-slate-600">
+                    El contenido se envía en pequeños paquetes de datos. El cliente (el dispositivo del usuario) almacena temporalmente una pequeña parte del archivo en un <span class="font-bold">búfer</span>. Esto permite la reproducción inmediata mientras el resto del archivo se descarga en segundo plano.
+                </p>
+
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mt-4">
+                    <p class="text-slate-800 text-sm">
+                        La compresión es fundamental para el streaming. Sin códecs Lossy eficientes (como AAC o MP3), los archivos serían demasiado grandes para ser transmitidos a las velocidades de Internet promedio sin interrupciones.
+                    </p>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-2/5 bg-slate-100 p-8 flex flex-col items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-200">
+                <div class="bg-white p-2 rounded-lg shadow-md w-full mb-6">
+              
+                    <p class="text-xs text-center text-slate-500 mt-2 tech-font">SERVIDOR A CLIENTE</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-slate-50 p-6 border-t border-slate-200 text-center">
+            <a href="ALGO.html" class="inline-block px-6 py-2 bg-slate-800 text-white rounded hover:bg-slate-700 transition tech-font text-sm">
+                &lt; VOLVER AL ÍNDICE /&gt;
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

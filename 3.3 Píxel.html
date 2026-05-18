@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.3 Píxel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; }
+        .tech-font { font-family: 'Roboto Mono', monospace; }
+        .theme-color { color: #f97316; } /* Naranja/Ámbar para imágenes */
+        .border-theme { border-color: #f97316; }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8 flex items-center justify-center">
+
+    <div class="w-full max-w-5xl bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden">
+        
+        <header class="bg-slate-900 text-white p-8 border-b-4 border-theme">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                    <h1 class="text-3xl md:text-4xl tech-font font-bold theme-color">3.3 PÍXEL</h1>
+                    <p class="text-slate-400 mt-2 tech-font text-sm">Modulo: Compresión // Status: Unidad Base</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex flex-col lg:flex-row">
+            
+            <div class="w-full lg:w-3/5 p-8 md:p-12 space-y-6">
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    El <span class="font-bold theme-color">píxel (Picture Element)</span> es la unidad mínima, o el bloque de construcción fundamental, de cualquier imagen digital de tipo rasterizado (mapa de bits).
+                </p>
+                
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4">
+                    <p class="text-slate-800">
+                        Cada píxel es un punto microscópico en la cuadrícula de la imagen. La única información que almacena un píxel es su ubicación (coordenadas X, Y) y su <span class="font-bold">valor de color</span>, el cual está determinado por la profundidad de bits.
+                    </p>
+                </div>
+
+                <p class="text-slate-700 leading-relaxed">
+                    La compresión, especialmente la Lossy como JPEG, busca patrones de redundancia y similitud entre píxeles vecinos para representarlos de manera más eficiente. Al agrupar o promediar los valores de color de bloques de píxeles, se reduce significativamente la cantidad de información necesaria.
+                </p>
+            </div>
+
+            <div class="w-full lg:w-2/5 bg-slate-100 p-8 flex flex-col items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-200">
+                <div class="bg-white p-2 rounded-lg shadow-md w-full mb-6 text-center">
+                    <div class="text-4xl text-orange-500 mb-2">🔳</div>
+                    <p class="text-sm font-bold text-slate-700">UNIDAD DE COLOR Y POSICIÓN</p>
+                    <p class="text-xs text-slate-500 tech-font">(X: 450, Y: 120, Color: RGB 255/128/0)</p>
+                </div>
+                <img src="https://th.bing.com/th/id/R.fbfba9cb58b8c456477eca7829835b65?rik=7dVimc%2fIDl8WXg&riu=http%3a%2f%2fwww.emayte.com%2fwp-content%2fuploads%2f2018%2f01%2fzoom-pixel.png&ehk=ZFIvqqqcG1FLxOB%2byGjOLDgoCezi8uohB4lkv2eVyms%3d&risl=&pid=ImgRaw&r=0" alt="Representación de un píxel con zoom" class="w-full rounded shadow-md h-auto object-cover">
+            </div>
+        </div>
+
+        <footer class="bg-slate-50 p-6 border-t border-slate-200 text-center">
+            <a href="ALGO.html" class="inline-block px-6 py-2 bg-slate-800 text-white rounded hover:bg-slate-700 transition tech-font text-sm">
+                &lt; VOLVER AL ÍNDICE /&gt;
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

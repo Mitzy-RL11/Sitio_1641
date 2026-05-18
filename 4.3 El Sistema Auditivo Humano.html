@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.3 El Sistema Auditivo Humano</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; }
+        .tech-font { font-family: 'Roboto Mono', monospace; }
+        .theme-color { color: #10b981; } /* Verde Esmeralda para Audio */
+        .border-theme { border-color: #10b981; }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8 flex items-center justify-center">
+
+    <div class="w-full max-w-5xl bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden">
+        
+        <header class="bg-slate-900 text-white p-8 border-b-4 border-theme">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                    <h1 class="text-3xl md:text-4xl tech-font font-bold theme-color">4.3 EL SISTEMA AUDITIVO HUMANO</h1>
+                    <p class="text-slate-400 mt-2 tech-font text-sm">Modulo: Compresión de Audio // Status: Percepción</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex flex-col lg:flex-row">
+            
+            <div class="w-full lg:w-3/5 p-8 md:p-12 space-y-6">
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    El audio digital comprimido (Lossy) explota las limitaciones y sesgos de nuestro <span class="font-bold theme-color">sistema auditivo</span>, un principio conocido como <span class="font-bold">Psicoacústica</span>.
+                </p>
+                
+                <h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">Bandas de Frecuencia y Umbrales</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-600 pl-4">
+                    <li><span class="font-bold">Rango de Audición:</span> Típicamente entre 20 Hz (graves) y 20,000 Hz (agudos), aunque el rango se reduce con la edad.</li>
+                    <li><span class="font-bold">Umbral de Audición:</span> El nivel de sonido mínimo que podemos escuchar. Los sonidos por debajo de este umbral se eliminan.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">Enmascaramiento Auditivo</h3>
+                <p class="text-slate-600">
+                    Es el fenómeno más importante en la compresión de audio. Un sonido fuerte (el <span class="italic">enmascarador</span>) puede hacer que un sonido suave (el <span class="italic">enmascarado</span>) sea inaudible si ambos ocurren simultáneamente (enmascaramiento frecuencial) o si el sonido fuerte precede o sigue al débil (enmascaramiento temporal). Los algoritmos Lossy eliminan el sonido enmascarado.
+                </p>
+            </div>
+
+            <div class="w-full lg:w-2/5 bg-slate-100 p-8 flex flex-col items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-200">
+                <div class="bg-white p-2 rounded-lg shadow-md w-full mb-6">
+                    
+                    <p class="text-xs text-center text-slate-500 mt-2 tech-font">MODELO PSICOACÚSTICO MP3</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-slate-50 p-6 border-t border-slate-200 text-center">
+            <a href="ALGO.html" class="inline-block px-6 py-2 bg-slate-800 text-white rounded hover:bg-slate-700 transition tech-font text-sm">
+                &lt; VOLVER AL ÍNDICE /&gt;
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.2 Propiedades de la Imagen Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono:wght@500;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; }
+        .tech-font { font-family: 'Roboto Mono', monospace; }
+        .theme-color { color: #f97316; } /* Naranja/Ámbar para imágenes */
+        .border-theme { border-color: #f97316; }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8 flex items-center justify-center">
+
+    <div class="w-full max-w-5xl bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden">
+        
+        <header class="bg-slate-900 text-white p-8 border-b-4 border-theme">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                    <h1 class="text-3xl md:text-4xl tech-font font-bold theme-color">3.2 PROPIEDADES DE LA IMAGEN DIGITAL</h1>
+                    <p class="text-slate-400 mt-2 tech-font text-sm">Modulo: Compresión // Status: Atributos</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex flex-col lg:flex-row">
+            
+            <div class="w-full lg:w-3/5 p-8 md:p-12 space-y-6">
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    Varias características definen la calidad y el tamaño de una imagen digital. Conocerlas es clave para entender la compresión.
+                </p>
+
+                <h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">Resolución</h3>
+                <p class="text-slate-600">
+                    Es la dimensión total de la imagen, expresada en píxeles (ancho x alto). Una mayor resolución significa más detalle y, por ende, un archivo de mayor tamaño.
+                </p>
+
+                <h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">Profundidad de Color</h3>
+                <p class="text-slate-600">
+                    Mide la cantidad de información (bits) que se utiliza para definir el color de cada píxel. A mayor profundidad, más colores disponibles (e.g., 24 bits = 16.7 millones de colores).
+                </p>
+                
+                <h3 class="text-xl font-bold text-slate-800 mt-6 mb-2">Densidad (DPI/PPI)</h3>
+                <p class="text-slate-600">
+                    Pixels Por Pulgada (PPI) o Puntos Por Pulgada (DPI). Indica cuántos píxeles se mostrarán en un espacio físico de una pulgada. Es crucial para la impresión.
+                </p>
+
+            </div>
+
+            <div class="w-full lg:w-2/5 bg-slate-100 p-8 flex flex-col items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-200">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-2 border-amber-100 text-center w-full">
+                    <p class="tech-font text-xs text-slate-500">CÁLCULO DE TAMAÑO BRUTO</p>
+                    <p class="text-xl font-bold text-orange-600 mt-2">Ancho x Alto x Profundidad de Color</p>
+                    <p class="text-slate-500 text-sm mt-2">El resultado es el tamaño en bits (antes de compresión)</p>
+                </div>
+                <img src="https://www.keyence.com.mx/Images/ss_microscope_glossary_t_color_resolution_001_2008263.jpg" alt="Diagrama de resolución y profundidad de color" class="w-full rounded shadow-md h-auto object-cover mt-6">
+            </div>
+        </div>
+
+        <footer class="bg-slate-50 p-6 border-t border-slate-200 text-center">
+            <a href="ALGO.html" class="inline-block px-6 py-2 bg-slate-800 text-white rounded hover:bg-slate-700 transition tech-font text-sm">
+                &lt; VOLVER AL ÍNDICE /&gt;
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
